@@ -1,0 +1,124 @@
+<!-- 1. Create a static web page showing the use of <a> tag with all supported attributes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header style="background-color: rgb(142, 98, 173); 
+    text-align: center; 
+    margin: 16px; 
+    padding-bottom: 12px;"
+    >
+
+        <h2 style="padding: 8px; margin: 0 ;">Task 1</h2>
+
+        <blockquote style="font-size: 14px; 
+        font-family: monospace; 
+        font-weight: bold; ">
+            Create a static web page showing the use of "&lta>" tag with all supported attributes.
+        </blockquote>
+
+    </header>
+
+    <main style=" 
+    margin: 16px; 
+    ">
+        <article style="background-color:lightsteelblue; 
+        text-align: justify; 
+        padding-inline: 12px;">
+            <h2>Use of &lta&gt tag</h2>
+            
+            <p>The &lta&gt tag defines a hyperlink, which is used to link from one page to another. <br><br>
+                The most important attribute of the &lta> element is the <b>href</b> attribute, <br>
+                    which indicates the link's destination.
+                    <br><br>
+                By default, links will appear as follows in all browsers:
+                <ul>
+                    <li>An unvisited link is underlined and blue</li>
+                    <li>A visited link is underlined and purple</li>
+                    <li>An active link is underlined and red</li>
+                </ul>
+            </p>
+        </article>
+        <article style="background-color:beige; 
+        text-align: justify; 
+        padding-inline: 12px;">
+            <h3>Few of the important attributes are</h3>
+            <ul>
+                <li><b>href</b><br>
+                    The href attribute specifies the URL of the page the link goes to. <br>
+                    If the href attribute is not present, the &lta> tag will not be a hyperlink. <br>
+                    eg: &lta href="https://www.w3schools.com/tags/att_a_href.asp">click here &lt/a> <br>
+                    <a href="https://www.w3schools.com/tags/att_a_href.asp">click here</a> to know more about <b>href</b>
+                </li><br>
+
+                <li><b>target</b><br>
+                    The target attribute specifies where to open the linked document<br>
+                    Syntax : &lta target="_blank|_self|_parent|_top|framename"> &lt/a><br>
+                    <a href="https://www.w3schools.com/tags/att_a_href.asp" target="_blank">click here</a> to know more about <b>target</b>
+                    <br>The above link will be open in new tab of the browsers
+                </li><br>
+
+                <li><b>download</b><br>
+                    Download file when clicking on the link (instead of navigating to the file).<br>
+                    Syntax : &lta href="/images/myw3schoolsimage.jpg" download="w3logo"> &lt/a><br>
+                    <a href="myw3schoolsimage.jpg" download="w3logo">
+                        <img src="myw3schoolsimage.jpg" alt="W3Schools" width="104" height="142">
+                    </a><br>
+                    <a href="https://www.w3schools.com/tags/att_a_download.asp" 
+                    target="_blank">click here</a> to know more about <b>download</b>
+
+                </li><br>
+            </ul>
+        </article>
+        <article style="background-color :lightcyan; 
+        text-align: justify; 
+        padding-inline: 12px;">
+            <h3>Some other attributes of a tag are :</h3>
+            <ul>
+                <li>
+                    <b>hreflang</b><br>
+                    The hreflang attribute specifies the language of the document in the link. <br>
+                    Syntax : &lta href="https://www.w3schools.com" hreflang="en">W3Schools&lt/a> <br>
+                    <a href="https://www.w3schools.com/tags/att_a_hreflang.asp">click here</a> to know more
+                </li><br>
+
+                <li>
+                    <b>media</b><br>
+                    The media attribute specifies what media or device the linked document is optimized for. <br>
+                    This attribute is used to specify that the target URL is designed for special devices (like iPhone), speech or print media. <br>
+                    Syntax : &lta href="att_a_media.asp?output=print"media="print and (resolution:300dpi)">
+                    Open media attribute page for print.&lt/a> <br>
+                    <a href="https://www.w3schools.com/tags/att_a_media.asp">click here</a> to know more
+                </li> <br>
+
+                <li>
+                    <b>ping</b><br>
+                    The ping attribute specifies a list of URLs to be notified if the user follows the hyperlink. <br>
+                    This attribute is useful for monitoring/tracking. <br>
+                    Syntax : &lta href="https://www.w3schools.com/html" ping="https://www.w3schools.com/trackpings"> &lt/a> <br>
+                    <a href="https://www.w3schools.com/tags/att_a_ping.asp">click here</a> to know more
+                </li><br>
+
+                <li>
+                    <b>rel</b><br>
+                    The rel attribute specifies the relationship between the current document and the linked document.<br>
+                    Syntax : &lta rel="nofollow" href="http://www.functravel.com/">Cheap Flights &lt/a> <br>
+                    <a href="https://www.w3schools.com/tags/att_a_rel.asp">click here</a> to know more
+                </li><br>
+
+
+            </ul>
+        </article>
+    </main>
+    <footer>
+
+
+    </footer>
+</body>
+</html>
