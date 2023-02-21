@@ -9,13 +9,13 @@
     <title>Document</title>
 </head>
 <body>
-    <header style="background-color:rgb(255, 224, 48); 
+    <header style="background-color:rgb(203, 212, 119); 
     text-align: center; 
     margin: 16px; 
     padding-bottom: 12px;"
     >
 
-        <h2 style="padding: 8px; margin: 0 ;">Task 3</h2>
+        <h2 id="home" style="padding: 8px; margin: 0 ;">Task 3</h2>
 
         <blockquote style=" font-size: large; 
         font-family:Georgia, 'Times New Roman', Times, serif; 
@@ -24,5 +24,73 @@
         </blockquote>
 
     </header>
+    <main style="margin: 16px; align-items: center; text-align: center; background-color: rgb(248, 214, 214);">
+        <article style="background-color: rgb(214, 150, 128);
+        text-align: justify; 
+        padding-inline: 12px;">
+            <h3>Bookmarks in HTML</h3>
+            <p style="font-size: large;">HTML links can be used to create bookmarks, 
+                so that readers can jump to specific parts of a web page.
+                <br>
+                To create a bookmark - first create the bookmark, then add a link to it
+                <br>
+                When the link is clicked, the page will scroll down or up to the location with the bookmark.
+                <br>
+                <h4>Example</h4>
+                <b>First, use the id attribute to create a bookmark:</b> <br>
+                &lth2 id="C4">Chapter 4&lt/h2>
+                <br>
+                <b>Then, add a link to the bookmark ("Jump to Chapter 4"), from within the same page:</b> <br>
+                &lta href="#C4">Jump to Chapter 4&lt/a>
+            </p>
+            Click any link below to go to the Image.
+            <Ul>
+                <li>
+                    <a href="#image1"> Click for Image 1</a>
+                </li>
+                <li>
+                    <a href="#image2"> Click for Image 2</a>
+                </li>
+                <li>
+                    <a href="#image3"> Click for Image 3</a>
+                </li>
+                <li>
+                    <a href="#image4"> Click for Image 4</a>
+                </li>
+            </Ul>
+                
+                
+                
+            <br>
+        </article>
+        
+        <figure id="image1" style="margin: 12px; padding: 12px; ">
+            <img src="images/image1.jpg" alt="image of stars" style="width:50%;">
+            <figcaption style="color: chocolate; margin-top: 8px;">Image 1 Stars in sky</figcaption>
+            <a href="#home"> Go to Top</a>
+        </figure>
+
+        <figure id="image2" style="margin: 12px; padding: 12px; ">
+            <img src="images/image2.jpg" alt="image of laptop" style="width:50%;"><br>
+            
+            <figcaption style="color: chocolate; margin-top: 8px;">Image 2 Laptop on table</figcaption>
+            <a href="#home"> Go to Top</a>
+        </figure>
+
+        <figure id="image3" style="margin: 12px; padding: 12px;">
+            <img src="images/image3.jpg" alt="image of stars" style="width:50%;">
+            <figcaption style="color: chocolate; margin-top: 8px;">Image 3 code in laptop</figcaption>
+            <a href="#home"> Go to Top</a>
+        </figure>
+
+        <figure id="image4" style="margin: 12px; padding: 12px;">
+            <img src="images/image4.jpg" alt="image of stars" style="width:50%;">
+            <figcaption style="color: chocolate; margin-top: 8px;">Image 4 Eat Sleep Code Repeat</figcaption>
+            <a href="#home"> Go to Top</a>
+        </figure>
+
+
+
+    </main>
 </body>
 </html>
