@@ -1,0 +1,123 @@
+<!-- 1. Show the use of various types of lists. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of lists in HTML</title>
+</head>
+<body>
+    <Header style="text-align: center; align-content: center ;">
+        <h1>Types of List In HTML</h1>
+        <p style="font-size:x-large; font-weight: 300 ;">
+            HTML lists allow the content to follow a proper semantic structure.
+        </p>
+    </Header>
+
+    <main style="margin: 16px;">
+        <article style="font-size: large; font-weight: 200;">
+            All the tags in the list require opening and closing <br> There are 3 types of lists in HTML, namely:
+            <ul>
+                <li>Unordered List</li>
+                <li>Ordered List</li>
+                <li>Description List</li>
+            </ul>
+        </article>
+
+        <article style="font-size: large; font-weight: 200;">
+            <h3>Unordered List</h3>
+            An Unordered list is used to create a list of related items, in bulleted or unordered format. <br> It starts with the &ltul> tag, followed by the &ltli> tag to show list items inside &ltul> tag. 
+            <h4>Syntax</h4>
+            <blockquote>
+                <pre>
+                &ltul>
+                    &ltli>Item1&lt/li>
+                    ...
+                &lt/ul>
+                </pre>
+            </blockquote>
+
+            We can also use different CSS properties to create a list with different styles. <br> It can have one of the following values :
+            <ul>
+                <li> <b>circle: </b>It gives a circle list item marker.</li>
+                <li><b>square: </b>  It gives square as list item marker.</li>
+                <li><b>disc: </b>This is the default filled circular bullet item marker.</li>
+                <li><b>none: </b>This is used to unmark list items.</li>
+            </ul>
+            <h4>Example syntax to create an unordered list with a square list item marker. </h4>
+            <blockquote>
+                <pre>
+                &ltul style="list-style-type:square;">
+                    &ltli>Item1&lt/li>
+                    ...
+                &lt/ul>
+                </pre>
+            </blockquote>
+        </article>
+
+        <article style="font-size: large; font-weight: 200;">
+            <h3>Ordered List</h3>
+            The Ordered lists have an order which is either numerical or alphabetical. <br> The &ltol> tag is used to create ordered lists in HTML and just like unordered list, we use &ltli> tag to define or show lists inside &ltol> tag.
+            <h4>Syntax</h4>
+            <blockquote>
+                <pre>
+                &ltol>
+                    &ltli>Item1&lt/li>
+                    &ltli>Item2&lt/li>
+                    ...
+                &lt/ol>
+                </pre>
+            </blockquote>
+
+            The ordered list has a type operator which defines what type of order the list will have, <br> like whether the list will start with a numerical value or an alphabetical value. <br>
+            The various ways to use the ordered list, are given below:
+            <ol type="i">
+                <li> <b>type = “1”: </b>List will start from 1.</li>
+                <li><b>type = “A”: </b>Here the list will start from A.</li>
+                <li><b>type = “a”: </b>Here the list will start from lowercase a.</li>
+                <li><b>type = “I”: </b>The list will start from Roman numbers.</li>
+                <li><b>type = “i”: </b>TheList will start from lowercase Roman numbers.</li>
+            </ol>
+            <h4>Example syntax to create an ordered list with a lowercase roman numbers. </h4>
+            <blockquote>
+                <pre>
+                &ltol type = "i">
+                    &ltli>Item1&lt/li>
+                    ...
+                &lt/ol>
+                </pre>
+            </blockquote>
+        </article>
+
+        <article style="font-size: large; font-weight: 200;">
+            <h3>Description List</h3>
+            A description list is a type of list where each item has a description. <br> It is also known as a definition list. <br> The &ltdl> tag is used to create description list, the &ltdt> tag defines the item, and the &ltdd> tag describes each item in list.
+            <h4>Syntax</h4>
+            <blockquote>
+                <pre>
+                &ltdl> 
+                    &ltdt> One &lt/dt>
+                        &ltdd> - Description1 &lt/dd>
+                    &ltdt> Two &lt/dt>
+                        &ltdd> - Description2 &lt/dd>
+                    &ltdt> Three &lt/dt>
+                        &ltdd> - Description3 &lt/dd>
+                &lt/dl>
+                </pre>
+            </blockquote>
+
+            The HTML definition list contains following 3 tags:
+            <dl type="i">
+                <dl><b> &ltdl> </b></dl>
+                    <dd>- It defines the start of the list. </dd>
+                <dl><b> &ltdt> </b></dl>
+                    <dd>- It defines a item. </dd>
+                <dl><b> &ltdd> </b></dl>
+                    <dd>- It defines the description of each item. </dd>
+            </dl>
+        </article>
+    </main>
+</body>
+</html>
