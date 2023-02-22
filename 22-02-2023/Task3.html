@@ -1,0 +1,45 @@
+<!-- 3. Create a static HTML Page and it should open another static page on the click in the red marked area. Each area represents a different page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping Image</title>
+</head>
+<body style="margin: 16px;">
+    <header style="text-align: center;">
+        <h1>Image Mapping in HTML</h1>
+        <p style="font-size: large; font-weight: 300;">
+            In image mapping an image is specified with certain set of coordinates inside the image which act as hyperlink areas to different destinations. <br>
+            It is different from an image link since in image linking, an image can be used to serve a single link or destination whereas in a mapped image, different coordinates of the image can serve different links or destinations.
+        </p>
+    </header>
+    <main>
+        <article style="font-size: large;">
+            <b>Elements required in Mapping an Image :</b>
+            <ol>
+                <li><b>Map:</b>It is used to create a map of the image with clickable areas.</li>
+                <li><b>Image:</b> It is used for the image source on which mapping is done.</li>
+                <li><b>Area:</b> It is used within the map for defining clickable areas.</li>
+            </ol>
+        </article>
+
+        <b>click on the image below to go to the related page</b> <br>
+        
+        <img src="images/image1.png" alt="Image" usemap="#myMap">
+
+        <map name="myMap">
+            <area shape="rect" coords="228,44,305,178" href="objects/Mobile.html" alt="Mobile Phone">
+            <area shape="rect" coords="105,204,288,247" href="objects/specs.html" alt="spectacles">
+            <area shape="rect" coords="351,43,428,149" href="objects/mouse.html" alt="mouse">
+            <area shape="rect" coords="439,17,597,144" href="objects/coffee.html" alt="coffee">
+            <area shape="rect" coords="606,18,790,230" href="objects/notebook.html" alt="notebook">
+            <area shape="poly" coords="10,12,279,10,336,115,10,243" href="objects/laptop.html" alt="laptop">
+        </map>
+
+
+    </main>
+</body>
+</html>
