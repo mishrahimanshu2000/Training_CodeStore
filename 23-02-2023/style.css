@@ -1,0 +1,18 @@
+table{
+    border-collapse: collapse;
+    border: 2px solid;
+    text-align: justify;
+    min-width: 70%;
+    /* max-width: 100%; */
+    min-height: 70%;
+    /* max-height: 100%; */
+}
+td,th{
+    border: 1px solid;
+    padding-inline : 2%;
+    padding-block: 1%;
+}
+th, .dark{
+    background-color: rgb(236, 236, 236);
+    font-weight: bolder;
+}
