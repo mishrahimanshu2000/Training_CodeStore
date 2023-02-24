@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="filter.css">
+        <script src="filter.js"></script>
+</head>
+
+<body>
+    <h2>Filter DIV Elements in HTML</h2>
+
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+        <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+        <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+        <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+    </div>
+
+    <div class="container">
+        <div class="fDiv cars">BMW</div>
+        <div class="fDiv colors fruits">Orange</div>
+        <div class="fDiv cars">Volvo</div>
+        <div class="fDiv colors">Red</div>
+        <div class="fDiv cars animals">Mustang</div>
+        <div class="fDiv colors">Blue</div>
+        <div class="fDiv animals">Cat</div>
+        <div class="fDiv animals">Dog</div>
+        <div class="fDiv fruits">Melon</div>
+        <div class="fDiv fruits animals">Kiwi</div>
+        <div class="fDiv fruits">Banana</div>
+        <div class="fDiv fruits">Lemon</div>
+        <div class="fDiv animals">Cow</div>
+    </div>
+</body>
+
+</html>
