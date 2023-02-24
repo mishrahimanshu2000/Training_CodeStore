@@ -1,0 +1,79 @@
+<!--  Design a student registration form with the following fields: Name, age, gender, address, contact no, 
+    subject(s) to enroll (can be multiple) also add relevant input validations & display the filled data. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="Task1.css">
+    <script src="Task3.js"></script>
+</head>
+
+<body>
+    <Header>
+        <h2>Registration Form</h2>
+    </Header>
+    <main>
+        <form name="regForm">
+            <!-- Use of fieldset -->
+            <fieldset class="fSet">                          
+                <!-- Use of Legend -->
+                <legend><strong>Perosnal Details</strong></legend>
+                <div class="divInput">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Enter Your Name" id="name" pattern="[A-za-z]{2-16}" required>
+                </div>
+                <div class="divInput">
+                    <label for="age">Age</label>
+                    <input type="number" placeholder="Enter your Age" id="age" pattern="[0-9]{1-2}" required>
+                </div>
+                <div class="divInput">
+                    <label for="gender">Gender</label>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </div>
+                <div class="divInput">
+                    <label for="address">Address</label>
+                    <input type="text" placeholder="Enter your Address" id="address">
+                </div>
+                <div class="divInput">
+                    <label for="contact">Contact no.</label>
+                    <input type="text" placeholder="Enter your contact No." id="contact" pattern="[0-9]{10}">
+                </div>
+            </fieldset>
+
+            <fieldset class="fset">
+                <!-- Use of Legend -->
+                <legend><strong>Select Subjects</strong></legend>
+                <div class="divInput">
+                Select Your Subjects
+                <br>
+                <input type="checkbox" name="checkbox" value="English">English <br>
+                <input type="checkbox" name="checkbox" value="Hindi">Hindi <br>
+                <input type="checkbox" name="checkbox" value="Mathematics">Mathematics <br>
+                <input type="checkbox" name="checkbox" value="Physics">Physics <br>
+                <input type="checkbox" name="checkbox" value="Chemistry">Chemistry <br>
+                <input type="checkbox" name="checkbox" value="Biology">Biology <br>
+                <input type="checkbox" name="checkbox" value="Physical Education">Physical Education <br>
+                <input type="checkbox" name="checkbox" value="Computer Science">Computer Science <br>
+                <input type="checkbox" name="checkbox" value="Music">Music <br>
+                </div>
+            </fieldset>
+            <div class="divInput">
+                <input type="submit" value="Submit" name="submit" onclick=" fetch(); return false; ">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p id="displayMessage">
+        </p>
+        <p id="subs"></p>
+    </footer>
+
+</body>
+</html>
