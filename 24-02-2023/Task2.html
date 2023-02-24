@@ -1,0 +1,77 @@
+<!-- Demonstrate the use of label, field set, opt group & legend in a HTML form. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lables, fieldset, optgroup legend</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <header>
+        <h2>Demonstrate the use of label, field set, opt group & legend in a HTML form.</h2>
+    </header>
+    <main>
+        <form>
+            <!-- Use of fieldset -->
+            <fieldset class="fSet">                          
+                <!-- Use of Legend -->
+                <legend><strong>Perosnal Details</strong></legend>
+                <div class="divInput">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Enter Your Name" name="name">
+                </div>
+                <div class="divInput">
+                    <label for="age">Age</label>
+                    <input type="number" placeholder="Enter your Age" name="age">
+                </div>
+                <div class="divInput">
+                    <label for="city">City</label>
+                    City : <input type="text" placeholder="Enter your City" name="city">
+                </div>
+                <div class="divInput">
+                    <label for="mail">E-mail</label>
+                    <input type="email" placeholder="Enter your Email" name="mail">
+                </div>
+            </fieldset>
+
+            <fieldset class="fset">
+                <!-- Use of Legend -->
+                <legend><strong>Food Preference</strong></legend>
+                <div class="divInput">
+                    Select Your Food Choice
+                    <select name="food" id="food">
+                        <!-- use of opt group -->
+                        <optgroup label="Veg">
+                            <option value="Matar Paneer">Matar Paneer</option>
+                            <option value="Saahi Paneer">Saahi Paneer</option>
+                            <option value="kadhai Paneer">kadhai Paneer</option>
+                            <option value="Matar Mushroom">Matar Mushroom</option>
+                        </optgroup>
+
+                        <optgroup label="Non-Veg">
+                            <option value="Egg Curry">Egg Curry</option>
+                            <option value="Butter Chicken">Butter Chicken</option>
+                            <option value="Handi Chicken">Handi Chicken</option>
+                            <option value="Mutton">Mutton</option>
+                        </optgroup>
+
+                        <optgroup label="Breads">
+                            <option value="Tawa Roti">Tawa Roti</option>
+                            <option value="Tandoori Roti">Tandoori Roti</option>
+                            <option value="Naan">Naan</option>
+                            <option value="Lachha Paratha">Lachha Paratha</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+            <div class="divInput">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </main>
+</body>
+</html>
