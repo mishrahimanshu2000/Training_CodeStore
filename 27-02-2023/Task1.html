@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors in CSS</title>
+    <link rel="stylesheet" href="Style1.css">
+
+</head>
+<body>
+    <header>
+        <h1>Selectors in CSS</h1>
+        <p> 
+            The style rule of CSS is made of 3 parts
+        </p>
+    </header>
+    <main>
+        <article id="article" >
+            <div>
+                <h3>Selector</h3>
+                <p>A selector is HTML tag at which the style is applied. This could be any tag like : &lth2>, &lttable> etc.</p>
+            </div>
+            <div>
+                <h3>Property</h3>
+                <p>A Property is a type of attribute of HTML tag at which a style will be applied. HTML attribute is converted into CSS Property. This could be color, border, etc.</p>
+            </div>
+            <div>
+                <h3>Value</h3>
+                <p>Value are assigned to Property.
+                    For example color property have the Value either red or #f1f1f1 etc.
+                </p>
+            </div>
+            You can put CSS style rule syntax  as follows : <br>
+            <pre class="codeEx">   selector{ property : value }</pre>
+            Example:
+            <pre class="codeEx">   table{border: 1px solid black}</pre>
+        </article>
+
+
+        <article>
+            <br>
+            <strong>
+                We can define selectors in various different ways based on our comfort. Few of them are: <br>
+            </strong>
+            <h4>1. Element/Type Selectors:</h4>
+            This is the selector in which the Element or tag  is selected and styled. <br>
+            Example : To give a color to all level 1 heading:
+            <pre class="codeEx">
+                h1{
+                    color : red
+                }</pre>
+        </article>
+
+
+        <article>
+            <h4>2. Id Selector:</h4>
+            <p>
+                we can define the style rules based on the <em>id</em> attribute of the Element. All the Elements having that <em>id</em> will be formatted according to defined rules.
+                <pre class="codeEx">
+                    #black{
+                        color : #000000
+                    }</pre>
+            </p>
+        </article>
+
+
+        <article>
+            <h4>3. Class Selector:</h4>
+            <p>
+                we can define style rule based on class attribute of the Element.
+                All element having that class will be formatted according to defined rule.
+                <pre class="codeEx">
+                    .black{
+                        color : black
+                    }</pre>
+                the above rule will render the content in black for every element with class attribute set to <em>black</em> in our HTML document. <br><br>
+                To make it bit more particular
+                <pre class="codeEx">
+                    h1.black{
+                        color : #000000
+                    }</pre>
+                this rule will render the content in black for only &lth1> Elements with class attribute set to black
+            </p>
+        </article>
+
+
+        <article>
+            <h4>4. Universal Selector</h4>
+            <p>
+                Rather then selecting elements of specific type, the universal selector quite simply matches the name of any element type:
+                <pre class="codeEx">
+                    *{
+                        color : black
+                    }</pre>
+            </p>
+        </article>
+    </main>
+</body>
+</html>

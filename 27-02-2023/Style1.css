@@ -1,0 +1,41 @@
+    /* Universal Selector */
+*{
+    background-color:lightblue;
+    color: rgb(22, 21, 21); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2px;
+}
+
+
+    /* Element Selector */
+header{
+    background-color:bisque;
+}
+h1{
+    color: rgb(134, 101, 101);
+    text-align: center;
+    background-color: bisque;
+}
+header p{
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    color:darkred;
+    background-color: bisque;
+}
+
+
+    /* Class Selector */
+.codeEx{
+    background-color: gray;
+    margin-inline: 8%;
+    margin-inline-end: 30%;
+}
+
+
+    /* ID selector */
+#article{
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 4px;
+}
