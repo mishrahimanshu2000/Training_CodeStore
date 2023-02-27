@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS components</title>
+    <!-- Using CSS icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+    <link rel="stylesheet" href="Style4.css">
+</head>
+<body>
+    <header>
+        <h1>CSS components</h1>
+    </header>
+    <main>
+        <article>
+            <h2>CSS colors</h2>
+            <p>
+                CSS uses color values to specify a color. Typically, these are used to set a color either for the foreground of an element (i.e., its text) or else for the background of the element. They can also be used to affect the color of borders and other decorative effects. <br>
+                We can specify our color value in various format:
+                <ul style="list-style-type: square;">
+                    <li>Hex Code : #RRGGBB</li>
+                    <li>Short Hex Code : #RGB</li>
+                    <li>RGB% : rgb(rrr%, ggg%, bbb%)</li>
+                    <li>Absolute RGB : rbg(rrr, ggg, bbb)</li>
+                    <li>Keywords : black, red etc.</li>
+                </ul>
+            </p>
+        </article>
+
+        <article>
+            <h2>CSS Margin, Padding and borders</h2>
+            <div style="text-align: center;">
+                <img src="images/box-model.png" alt="box-model">
+            </div>
+            <p>
+                <h3 id="margin">Margin</h3>
+                The margin property defines the space around an HTML element. It is possible to use negative values to overlap content.
+                <br>
+                We have following property to set an element margin.
+                <ul style="list-style-type: square;">
+                    <li>The margin specifies a shorthand property for setting the margin properties in one declaration.</li>
+                    <li>The margin-bottom specifies the bottom margin of an element.</li>
+                    <li>The margin-top specifies the top margin of an element.</li>
+                    <li>The margin-left specifies the left margin of an element.</li>
+                    <li>The margin-right specifies the right margin of an element.</li>
+                </ul>
+            </p>
+
+            <p>
+                <h3 id="padding">Padding</h3>
+                The padding property allows you to specify how much space should appear between the content of an element and its border −
+                <br>
+                The value of this attribute should be either a length, a percentage, or the word inherit. If the value is inherit, it will have the same padding as its parent element. If a percentage is used, the percentage is of the containing box. <br>
+                We have following property to set an element padding.
+                <ul style="list-style-type: square;">
+                    <li>The padding-bottom specifies the bottom padding of an element.</li>
+                    <li>The padding-top specifies the top padding of an element.</li>
+                    <li>The padding-left specifies the left padding of an element.</li>
+                    <li>The padding-right specifies the right padding of an element.</li>
+                    <li>The padding serves as shorthand for the preceding properties.</li>
+                </ul>
+            </p>
+
+            <p>
+                <h3 id="border">Border</h3>
+                The border properties allow you to specify how the border of the box representing an element should look.
+                <br>
+                There are three properties of a border you can change −
+                <ul style="list-style-type: square;">
+                    <li>The border-color specifies the color of a border.</li>
+                    <li>The border-style specifies whether a border should be solid, dashed line, double line, or one of the other possible values.</li>
+                    <li>The border-width specifies the width of a border.</li>
+                </ul>
+                
+            </p>
+        </article>
+
+        <article id="w_h">
+            <h2 >CSS Weight and Width</h2>
+            <p>
+                The height and width properties allow you to set the height and width for boxes. They can take values of a length, a percentage, or the keyword auto. <br>
+                We have the following properties that allow you to control the dimensions of a box.
+                <ul style="list-style-type: square;">
+                    <li>The height property is used to set the height of a box.</li>
+                    <li>The width property is used to set the width of a box.</li>
+                    <li>The line-height property is used to set the height of a line of text.</li>
+                    <li>The max-height property is used to set a maximum height that a box can be.</li>
+                    <li>The min-height property is used to set the minimum height that a box can be.</li>
+                    <li>The max-width property is used to set the maximum width that a box can be.</li>
+                    <li>The min-width property is used to set the minimum width that a box can be.</li>
+                </ul>
+            </p>
+        </article>
+
+        <article>
+            <h2 class="link">CSS Links and Link States</h2>
+            <p>
+                We can set the different properties of a hyperlink using CSS.
+                <br>
+                Following are properties of link:
+                <ul style="list-style-type: square;">
+                    <li>The a:link signifies unvisited hyperlinks.</li>
+                    <li>The a:visited signifies visited hyperlinks.</li>
+                    <li>The a:hover signifies an element that currently has the user's mouse pointer hovering over it.</li>
+                    <li>The :active signifies an element on which the user is currently clicking.</li>
+                </ul>
+                Remember a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective. Also, a:active MUST come after a:hover.
+                <br>
+                <a href="https://github.com/mishrahimanshu2000/Training_CodeStore">Click here for the github repository</a>
+            </p>
+        </article>
+
+        <article>
+            <h2>CSS Icons</h2>
+            <p>
+                Icons can be defined as the images or symbols used in any computer interface refer to an element. It is a graphical representation of a file or program that helps the user to identify about the type of file quickly.<br>
+                There are given some of the icon libraries such as Bootstrap icons, Font Awesome icons, and Google icons that can be used in CSS easily. There is no need to install or download the libraries mentioned above.
+                <br>
+                <br>
+                To use this library in our HTML page, we need to add the following link within the &lthead>&lt/head> section.
+                <br>
+                <i class="material-icons" style="color:rgb(135, 199, 241); font-size: 48px;">cloud</i>
+                <i class="material-icons" style="color:rgb(164, 175, 154); font-size: 42px;">attachment</i>   
+                <i class="material-icons" style="color:rgb(47, 22, 104); font-size: 52px;">computer</i>   
+                <i class="material-icons" style="color:red; font-size: 48px;">favorite</i>   
+                <i class="material-icons" style="color:rgb(0, 238, 255); font-size: 48px;">traffic</i>     
+            </p>
+        </article>
+
+        <article>
+            <h2>CSS List Styles</h2>
+            <p>
+                In HTML, there are two main types of lists:
+                <ol>
+                    <li>unordered lists (&ltul>) - the list items are marked with bullets</li>
+                    <li>ordered lists (&ltol>) - the list items are marked with numbers or letters</li>
+                </ol>
+                The CSS list properties allow us to:
+                <ul>
+                    <li>Set different list item markers for ordered lists</li>
+                    <li>Set different list item markers for unordered lists</li>
+                    <li>Set an image as the list item marker</li>
+                    <li>Add background colors to lists and list items</li>
+                </ul>
+                
+            </p>
+        </article>
+
+        <article>
+            <h2>CSS Table styles</h2>
+            <p>
+                The look of an HTML table can be greatly improved with CSS:
+                <Table>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>City</th>
+                        <th>State</th>
+                    </tr>
+                    <tr>
+                        <td>Pankaj</td>
+                        <td>Singh</td>
+                        <td>Udaipur</td>
+                        <td>Rajasthan</td>
+                    </tr>
+                    <tr>
+                        <td>Piyush</td>
+                        <td>Verma</td>
+                        <td>Muzaffarpur</td>
+                        <td>Bihar</td>
+                    </tr>
+                    <tr>
+                        <td>Abhishek</td>
+                        <td>Maurya</td>
+                        <td>Varanasi</td>
+                        <td>Uttar Pradesh</td>
+                    </tr>
+                </Table>
+            </p>
+        </article>
+
+    <article>
+        <h2>CSS Display Types</h2>
+        The display property specifies the display behavior (the type of rendering box) of an element. <br>
+        In HTML, the default display property value is taken from the HTML specifications or from the browser/user default style sheet. The default value in XML is inline, including SVG elements.
+        <br>
+        There are many values that the display property can have, but there are only about five that we need.
+        <br>
+            <div class="inline"> Inline (taking only required space) </div> <br>
+            <div class="block"> Block (taking whole row)</div>
+            <div class="flex">flex (flexible width defined by user)</div>
+            <div class="grid">Grid (display as grid)</div>
+            <div class="none">none(it will not display and dont take space)</div>
+    </article>
+
+        
+    </main>
+</body>
+</html>
