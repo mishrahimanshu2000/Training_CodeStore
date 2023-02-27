@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusion of CSS in HTML document</title>
+    <!-- Using Embedded Here -->
+    <style>
+        article{
+            color:darkslategray;
+        }
+    </style>
+    <!-- Using External CSS -->
+    <link rel="stylesheet" href="Style3.css">
+</head>
+<body>
+    <header>
+        <h1>Inclusion Of CSS</h1>
+        <p>There are four ways to associate styles with our HTML document. Most commonly used methods are Inline CSS and External CSS
+        </p>
+    </header>
+    <main>
+        <article>
+            <h2>Embedded CSS - The &ltstyle> Element</h2>
+            We can put our CSS rule into an HTML document using &ltstyle> element. This Tag is placed inside the &lthead>...&lt/head> tags. <br>
+            Rule defined using this syntax will be applied to all the elemnts available in the document. <br>
+            here is the generic syntax: 
+            <div class="bordered">
+                <pre>
+                    <code>
+                        &lthead>
+                            &ltstyle type="text/css" media="...">
+                            style rules
+                            ......
+                            &lt/style>
+                        &lt/head>
+                    </code>
+                </pre>
+            </div>
+            <strong>Example</strong> <br>
+            Here is the Example of embed CSS: 
+            <div>
+                <pre>
+                    <code>
+                        &lthead>
+                            &ltstyle type="text/css" media="...">
+                            h1{
+                                color : #000000
+                            }
+                            &lt/style>
+                        &lt/head>
+                    </code>
+                </pre>
+            </div>
+        </article>
+
+        <article>
+            <!-- Using Inline CSS here -->
+            <h2 style="text-align: center;">Inline CSS - The <em>style</em> Attribute</h2>
+            We can use style attribute of any HTML element to define style rules. These rules will be applied to that element only. <br>
+            here is the generic syntax: 
+            <div class="bordered">
+                <pre><code>
+                        &ltelement style = " ... Style rules...">
+                </code></pre>
+            </div>
+            <strong>Example</strong> <br>
+            Here is the Example of Inline CSS: 
+            <div>
+                <pre><code>
+                        &lthtml>
+                            &lthead>
+                            &lt/head>
+                            &ltbody>
+                                &lth1 style ="color: black ">
+                                    This is Inline CSS.
+                                &lt/h1>
+                            &lt/body>
+                        &lt/html>
+                    </code></pre>
+            </div>
+        </article>
+        
+        <article>
+            <h2>External CSS - The <em>&ltlink></em> Element</h2>
+            The &ltlink> element can be used to include an external stylesheet file in your HTML document. <br>
+            An external style sheet is a separate text file with .css extension. We define all the Style rules within this text file and then we can include this file in any HTML document using &ltlink> element. <br>
+            Here is the generic syntax of including external CSS file −
+            <div class="bordered">
+                <pre><code>
+                        &lthead>
+                            &ltlink rel="stylesheet" href = "..." media = "...">
+                        &lt/head>
+                </code></pre>
+            </div>
+            <strong>Example</strong> <br>
+            Here is the Example of External CSS: 
+            <div>
+                Consider a simple style sheet file with a name <em>style3.css</em> having the following rules −
+                <pre><code>
+                    h1{
+                        color: #36C;
+                        font-weight: normal;
+                        text-transform: lowercase
+                    }
+
+                    Now we can include this file style3.css in any HTML document like this - 
+
+                    &lthtml>
+                        &lthead>
+                            &ltlink rel="stylesheet" href="style3.CSS">
+                        &lt/head>
+                    &lt/html>
+                    </code></pre>
+            </div>
+        </article>
+        
+        <article>
+            <h2>Imported CSS - @imported Rule</h2>
+            @import is used to import an external stylesheet in a manner similar to the &ltlink> element. <br>
+            Here is the generic syntax of @import rule.<br>
+            <div class="bordered">
+                <pre><code>
+                        &lthead>
+                            @import "URL";
+                        &lt/head>
+                </code></pre>
+            </div>
+            Here URL is the URL of the style sheet file having style rules.<br>
+            <strong>Example</strong> <br>
+            Here is the Example of imported CSS: 
+            <div>
+                <pre><code>
+                    &lthtml>
+                        &lthead>
+                            @import "style3.css";
+                        &lt/head>
+                    &lt/html>
+                    </code></pre>
+            </div>
+        </article>
+        
+        
+    </main>
+</body>
+</html>
