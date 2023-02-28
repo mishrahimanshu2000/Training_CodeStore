@@ -1,0 +1,43 @@
+main{
+    margin-top:60px;
+    position: relative;
+}
+div.navBar{
+    background-color: rgb(77, 70, 70);
+    display: block;
+    position: sticky ;
+    /* position: -webkit-sticky; */
+    top: 1px;
+    width: 100%;
+}
+body{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    background-color: rgb(111, 122, 94);
+}
+.navBar a{
+    padding: 12px 8px;
+    font-size: 18px;
+    margin: 2px 8px;
+    display: inline-block;
+    border-radius: 12px;
+
+}
+.navBar a.active{
+    background-color: white;
+    color: black;
+}
+
+@media screen and (max-width : 600px){
+    .navBar a{
+        display: block;
+    }
+    main{
+        margin-top: 40%;
+    }
+}

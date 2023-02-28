@@ -18,11 +18,11 @@ p{
 }
 .flexbox{
     height: auto;
-    width: 420px;
+    width: 336px;
     border: 1px solid black;
     
 }
 img{
-    width: 420px;
-    height: 360px;
+    width: 320px;
+    height: 280px;
 }
