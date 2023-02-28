@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    text-decoration:solid ;
+    color: darkorange;
+}
+div{
+    padding: 12px;
+    margin: 2px;
+}
+p{
+    text-align: justify;
+}
+.container{
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 12px;
+}
+.flexbox{
+    height: auto;
+    width: 420px;
+    border: 1px solid black;
+    
+}
+img{
+    width: 420px;
+    height: 360px;
+}
