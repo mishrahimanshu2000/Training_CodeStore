@@ -1,0 +1,47 @@
+h2{
+    display: inline;
+}
+h2:hover{
+    color: brown;
+    font-size: 28px;
+}
+main p{
+    font-size: large;
+}
+main p::first-line{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+main p::first-letter{
+    color: chocolate;
+    font-size: 1.6em;
+}
+div p{
+    display: none;
+    font-size: 18px;
+    background-color: azure;
+}
+h3{
+    font-size: 32px;
+}
+div:hover p{
+    display: inline-block;
+}
+p::after{
+    content : "This is inserted with p::after"
+}
+a{
+    color: blue;
+}
+a:active{
+    color: rgb(0, 0, 0);
+    
+}
+a:visited{
+    color: rgb(0, 0, 0);
+    /* background-color: rgb(61, 63, 63); */
+}
+a:hover{
+    color: black;
+    font-size: 1.2em;
+}
