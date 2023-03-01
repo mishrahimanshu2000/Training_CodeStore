@@ -22,14 +22,20 @@
         .white {
             color: white;
         }
+        .hw{
+            width: 60px;
+        }
+        input{
+            width: 120px  ;
+        }
 
     </style>
 </head>
 
-<body>
+<body class="text-center align-items-center mt-5 ">
 
     <!----------------------- User Registation and sign in button ------------------------------------>
-    <div class="container text-center mt-5">
+    <div class="container text-center align-items-center mt-5">
         <div class="row justify-content-center">
             <button class="col-2 fw-bold bg-primary white">
                 <i class="bi bi-person-plus-fill"></i>
@@ -44,20 +50,20 @@
 
 
         <!--------------------------------------------Form ---------------------------------------->
-        <form action="#" class="align-items-center">
-            <div class="input align-items-center m-2">
-                <input type="email" id="text" placeholder="Email address" required>
-                <div class="d-inline"> <i class="bi-envelope"></i></div>
+        <form action="#" class="align-items-center"> 
+            <div class="input-group align-items-center m-2">
+                <input type="email" id="text" placeholder="Email address" class="form-control " required>
+                <div class="d-inline input-group-text"> <i class="bi-envelope"></i></div>
             </div>
-            <div class="input align-items-center m-2">
-                <input type="password" id="text" placeholder="Password" required>
-                <div class="d-inline"> <i class="bi-key-fill"></i></div>
+            <div class="input-group align-items-center m-2">
+                <input type="password" id="text" placeholder="Create Password" class="form-control" required>
+                <div class="d-inline input-group-text"> <i class="bi-key-fill"></i></div>
             </div>
-            <div class="input align-items-center m-2">
-                <input type="password" id="text" placeholder="Confirm Password" required>
-                <div class="d-inline"> <i class="bi-key-fill"></i></div>
+            <div class="input-group align-items-center m-2">
+                <input type="password" id="text" placeholder="Confirm Password" class="form-control" required>
+                <div class="d-inline input-group-text"> <i class="bi-key-fill"></i></div>
             </div>
-            <div class="m-xxl-5">
+            
                 <hr>
             </div>
         </form>
