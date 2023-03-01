@@ -29,14 +29,19 @@
             font-size: 60px;
         }
 
-        .bg-yellow {
-            background-color: yellow;
+
+        .textWidth{
+            text-decoration: solid;
             font-size: 12rem;
-            margin-bottom: 0;
         }
 
         .f-height {
             height: 250px;
+        }
+
+        .verticaltext {
+            width: 1px;
+            transform: rotate(90deg);
         }
     </style>
 </head>
@@ -75,7 +80,7 @@
     <div style="background-color: antiquewhite;"
         class="container c2 d-lg-flex justify-content-center align-items-center gap-5 res d-sm-block bg-body">
 
-        <!------------- main body left -------------->
+        <!------------- main body left (Book) -------------->
 
         <div class="border-1-sol-blk">
             <div class="position-relative bg-body-secondary f-height">
@@ -96,13 +101,14 @@
             <div class="fw-semibold b-name mt-3 text-xxl-end me-5 f-height">
                 COMPLETE <br> SERIES
             </div>
-            <div class="bg-yellow fw-bolder text-end mb-0 f-height">
-                <h1 class="bg-yellow me-4 text-end">JS</h1>
+            <div class="bg-warning fw-bolder text-end mb-0 f-height">
+                <h1 class="bg-warning me-4 text-end textWidth">JS</h1>
+                
             </div>
 
         </div>
 
-        <!-- Main body right -->
+        <!-- Main body right (Body) -->
         <div class="align-items-center">
 
             <div class="col d-flex flex-column align-items-center gap-5 d-grid">
@@ -123,6 +129,7 @@
             </div>
         </div>
     </div>
+    <!----------------------- Footer ----------------------->
     <footer class="d-grid align-items-center text-center text-bg-dark bg-dark mt-4 pt-5">
         <h3>The first ebook in the book series is absolutely free</h3>
         <button class="btn bg-warning ms-5 me-5 mb-5">Find out more about this offer</button>
