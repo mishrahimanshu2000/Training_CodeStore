@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Outputs using JS</title>
+</head>
+<body class="m-2">
+    <h1 class="bg-primary m-2">Display Output JavaScript</h1>
+    JavaScript can "display" data in different ways:
+    <ul>
+        <li>Writing into an HTML element, using innerHTML.</li>
+        <li>Writing into the HTML output using document.write().</li>
+        <li>Writing into an alert box, using window.alert().</li>
+        <li>Writing into the browser console, using console.log().</li>
+    </ul>
+    <h3>
+        1. Using innerHTML
+    </h3>
+    <p class="fs-5">
+        To access an HTML element, JavaScript can use the document.getElementById(id) method.
+        <br>
+        The id attribute defines the HTML element. The innerHTML property defines the HTML content:
+    </p>
+    <button id="btn1" onclick="display()" >
+        Click for Example
+    </button>
+    <div id="example1"></div>
+    <br>
+    <h3>
+        2. Using document.write()
+    </h3>
+    <p class="fs-5">
+        For testing purposes, it is convenient to use document.write():
+    </p>
+    <button id="btn2" onclick="docWrite()" >
+        Click for Example
+    </button>
+    <br>
+    <br>
+    <h3>
+        3. Using window.alert()
+    </h3>
+    <p class="fs-5">
+        We can use an alert box to display data:
+    </p>
+    <button id="btn3" onclick="winAlert()" >
+        Click for Example
+    </button>
+
+    <br>
+    <br>
+    <h3>
+        4. Using console.log()
+    </h3>
+    <p class="fs-5">
+        For debugging purposes, we can call the console.log() method in the browser to display data.
+    </p>
+    <button id="btn3" onclick="conLog()" >
+        Click for Example
+    </button>
+
+    <br>
+    <br>
+    <h3>
+        5. JavaScript print
+    </h3>
+    <p class="fs-5">
+        JavaScript does not have any print object or print methods. <br>
+        We cannot access output devices from JavaScript. <br>
+        The only exception is that we can call the window.print() method in the browser to print the content of the current window.
+    </p>
+    <button id="btn3" onclick="window.print()" >
+        Print this page
+    </button>
+    <script src="Task2.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+</html>

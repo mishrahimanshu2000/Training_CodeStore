@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-center shadow-lg  text-bg-primary m-3">Inclusion of JavaScript in HTML Document</h2>
+    </header>
+    <main class="m-2">
+        <h3 class="text-decoration-underline">JavaScript can be included in the HTML Document using the following Ways
+        </h3>
+        <article>
+            <div>
+                <h4>1. Inside &ltscript> tag</h4>
+                <input type="button" onclick="visible()" id="button1" value="Click for example" class="text-bg-secondary">
+
+<!------------------------------ Example of Internal JS inside script tag ------------------------------->
+
+                <script>
+                    function visible() {
+                        let example = document.getElementById('example1');
+                        example.classList.toggle("d-none");
+                        let btn = document.getElementById("button1");
+                        if(btn.value === "Click for example") btn.value = "Click to hide example";
+                        else btn.value = "Click for example";
+                        btn.classList.toggle('text-bg-secondary')
+                    }
+                </script>
+                <P>
+                    <pre  id="example1" class="d-none">
+                    <code>&ltscript>
+                        document.getElementById("demo").innerHTML = "My First JavaScript";
+                    &lt/script>
+                    </code>
+                    </pre>
+                </P>
+                <p class="fst-italic fs-5">
+                    We can place any number of scripts in an HTML document. <br>
+                    Scripts can be placed in the &ltbody>, or in the &lthead> section of an HTML page, or in both.
+                </p>
+            </div>
+        </article>
+
+
+        <article>
+            <h4>2. External JavaScript</h4>
+            <p class="fs-5 fst-italic">
+                Scripts can also be placed in external files: <br>
+                External scripts are practical when the same code is used in many different web pages. <br>
+                JavaScript files have the file extension .js. <br>
+                To use an external script, put the name of the script file in the src (source) attribute of a &ltscript> tag:
+            </p>
+
+<!--------------------------------- Example of External JS inside Script tag ---------------------------------->
+
+            <script src="Task1.js"></script>
+            <input type="button" onclick="visible_external()" id="button2" value="Click for example" class="text-bg-secondary">
+            <P>
+                <pre id="example2" class="d-none">
+                <code>&ltscript src="Task1.js">&lt/script></code>
+                </pre>
+            </P>
+            <p>
+                <h5>Advantages of External JavaScript</h5>
+                <ul>
+                    <li>It separates HTML and code</li>
+                    <li>It makes HTML and JavaScript easier to read and maintain</li>
+                    <li>Cached JavaScript files can speed up page loads</li>
+                </ul>
+            </p>
+            We can give reference to src :<br>
+            <ul>
+                <li>With a full URL (a full web address)</li>
+                <li>With a file path (like /js/)</li>
+                <li>Without any path (if in same folder)</li>
+            </ul>
+            
+        </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
