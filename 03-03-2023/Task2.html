@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Pattern</title>
+</head>
+
+<body>
+    <button id="star" onclick="star()">Click to print star</button>
+    <button id="star" onclick="pyramid()">Click to pyramid pattern</button>
+
+
+    <pre id="ans" style="font-weight: bold; font-size: large"></pre>
+
+    <script>
+/*
+        program to print 
+        *****
+        *   *
+        *   *
+        *   *
+        *****
+*/
+        function star() {
+            let p = "";
+            let html = "";
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) {
+                    if (i == 0 || j == 0 || i == 4 || j == 4) {
+                        p += "*";
+                        html += "*"
+                    }
+                    else {
+                        p += " "
+                        html += " "
+                    }
+                }
+                p += "\n";
+                html += "<br>"
+            }
+            console.log(p);
+            document.getElementById('ans').innerHTML = html;
+        }
+/*
+            program to print nummber pattern
+                1    
+               123  
+              12345
+             1234567 
+            123456789
+*/
+
+
+        function pyramid() {
+            let num = 5
+            let html="";
+            let output = "";
+            for (let i = 0; i < num; i++) {
+                let space = "";
+                for (let s = 0; s < (num - i - 1); s++) {
+                    space += " ";
+                }
+                for (let j = 1; j <= 2 * i + 1; j++) {
+                    output += ("" + j);
+                }
+                html += (space+output+"<br>")
+                console.log(space + output);
+                output = "";
+            }
+            document.getElementById('ans').innerHTML = html;
+        }
+
+    </script>
+</body>
+
+</html>
