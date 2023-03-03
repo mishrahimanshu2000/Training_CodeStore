@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling in JS</title>
+</head>
+<body>
+    <h2>Enter the numbers to perform division</h2>
+    <input type="number" id="num1"> / 
+    <input type="number" id="num2">
+    <button type="submit" onclick="divide()"
+    style="padding: 2px; text-align: center0;">Divide</button>
+    <p id="ans"></p>
+
+
+
+    <script>
+        function divide() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            try{
+                let a = Number(num1);
+                let b = Number(num2);
+                if(b==0) throw "Division by zero is not possible"
+                let c = a/b;
+                document.getElementById('ans').innerHTML = "The answer is " + c;
+            }
+            catch(err){
+                document.getElementById('ans').innerHTML = "An error occurred: " + err;
+            }
+        }
+    </script>
+</body>
+</html>
