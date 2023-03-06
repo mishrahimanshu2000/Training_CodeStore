@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Area</title>
+</head>
+
+<body>
+
+    <header>
+        <h2 class="align-items-center text-center m-2">
+            Classes in JavaScript
+        </h2>
+    </header>
+    <main>
+        <div class="text-bg-secondary ms-5 me-5 p-3">
+            Click the button below to find the area
+        </div>
+        <div class="container d-flex m-auto align-items-center">
+            <div class="d-flex m-2 p-2">
+                <button value="square" onclick="sq()" class="text-bg-primary p-2">Square</button>
+            </div>
+            <div class="d-flex m-2 p-2">
+                <button value="triangle" onclick="tr()" class="text-bg-warning p-2">Triangle</button>
+            </div>
+            <div class="d-flex m-2 p-2">
+                <button value="rectangle" onclick="rect()" class="text-bg-info p-2">Rectangle</button>
+            </div>
+        </div>
+    </main>
+    <Script>
+
+        class Area {
+            square(a) {
+                return a * a;
+            }
+            rectangle(len, bre) {
+                return len * bre;
+            }
+            triangle(base, height) {
+                return (base * height) / 2;
+            }
+        }
+        let area = new Area();
+
+        sq = () => {
+            let s = prompt("Enter the side of square: ")
+            if (isNaN(s) || s <= 0) {
+                alert("The side is invalid");
+                return sq();
+            }
+            let a = area.square(s);
+
+            console.log("The area of square with side " + s + " is " + a);
+            alert("The area of square with side " + s + " is " + a);
+        }
+
+        tr = () => {
+            let base = prompt("Enter the base of triangle");
+            if (isNaN(base) || base <= 0) {
+                alert("Invalid base")
+                return tr()
+            }
+            let height = prompt("Enter the height of triangle")
+            if (isNaN(height) || height <= 0) {
+                alert("Invalid height")
+                return tr()
+            }
+            let a = area.triangle(base, height);
+
+            console.log("The area of triangle with base " + base + " and height " + height+ " is " + a);
+            alert("The area of triangle with base " + base + " and height " + height+ " is " + a);
+
+        }
+
+        rect = () => {
+            let len = prompt("Enter the length of rectangle")
+            if (isNaN(len) || len <= 0) {
+                alert("Invalid length")
+                return rect()
+            }
+            let bre = prompt("Enter the breadth of rectangle")
+            if (isNaN(bre) || bre <= 0) {
+                alert("Invalid breadth")
+                return rect(); 
+            }
+            let a = area.rectangle(len, bre);
+
+            console.log("The area of rectangle with length " +  len + " and breadth " + bre + " is "+ a);
+            alert("The area of rectangle with length " +  len + " and breadth " + bre + " is "+ a);
+        }
+    </Script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
