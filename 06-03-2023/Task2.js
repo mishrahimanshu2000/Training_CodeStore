@@ -16,6 +16,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+// To use access modifiers we need to create TS file and then compile it to get JS file 
 var Employee = /** @class */ (function () {
     // employeeName;
     function Employee(name) {

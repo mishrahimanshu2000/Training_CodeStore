@@ -2,6 +2,8 @@
 // The followings are the access modifiers in most of the object-oriented programs.
 // public, private and protected.
 
+// To use access modifiers we need to create TS file and then compile it to get JS file 
+
 
 class Employee {
     employeeName: string
