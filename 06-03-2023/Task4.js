@@ -26,6 +26,7 @@ function simpleIntrest(){
     validate(p, i, t);
     let si = (p*i*t)/100;
     document.getElementById("output").innerHTML = `The Simple interest will be <b> ${si} <b>`;
+    console.log(`The Simple interest will be ${si}`);
 }
 
 function compoundIntrest(){
@@ -36,4 +37,5 @@ function compoundIntrest(){
     validate(p, i, t);
     let ci = p*((1+(i/100))**t) - p;
     document.getElementById("output").innerHTML = `The Simple interest will be <b> ${ci} <b>`;
+    console.log(`The Simple interest will be ${ci}`);
 }
