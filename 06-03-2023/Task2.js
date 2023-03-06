@@ -68,4 +68,4 @@ himanshu.greet();
 // himanshu._salary;
 // this will also throw an errior: Property '_salary' is protected and only accessible within class 'Employee' and its subclasses.
 himanshu.setSalary(15000);
-console.log(himanshu.salary);
+console.log(himanshu._salary);
