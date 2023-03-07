@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Buddies</title>
+    <style>
+        select, button{
+            font-size: x-large;
+            padding: 2px;
+            text-align: center;
+            margin: 2px;
+        }
+        body{
+            align-items: center;
+            text-align: center;
+        }
+        p{
+            margin-bottom: 0;
+        }
+        
+    </style>
+</head>
+<body style="font-size: xx-large;">
+    <label for="source">Source: </label>
+    <select name="Source" id="src" onchange="selectedSrc()">
+        <option value="none" selected disabled>Choose one</option>
+        <option value="Delhi" >Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Varanasi">Varanasi</option>
+        <!-- <option value="Roorkee">Roorkee</option>
+        <option value="Noida">Noida</option>
+        <option value="Lucknow">Lucknow</option> -->
+    </select>
+
+    <label for="Destination">Destination: </label>
+    <select name="Destination" id="des" onchange="selectedDest()">
+        <option value="none" selected disabled>Choose one</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Varanasi">Varanasi</option>
+        <!-- <option value="Roorkee">Roorkee</option>
+        <option value="Noida">Noida</option>
+        <option value="Lucknow">Lucknow</option> -->
+        <!-- <option value=""></option> -->
+    </select>
+    <br>
+    <Button onclick="addRoute()" >
+        Add Journey
+    </Button>
+    
+    <div id="pq"></div>
+    
+</body>
+    <script>
+        let source = document.querySelector('#src');
+        let dest = document.querySelector('#des');
+        let routes = new Map();
+        for(let i=0; i<=6 ; i++){
+            routes.set(i,[]);
+        }
+        let para = document.getElementById('pq');
+        
+
+        function selectedSrc(){
+            op = source.selectedIndex;
+            console.log(op);
+            // console.log(dest.options)
+            for(let i=1; i<source.length; i++){
+                dest.options[i].removeAttribute("disabled");
+            }
+            opt = dest.options;
+            
+            let r = routes.get(op);
+            console.log(r);
+            for(let i=0; i<r.length; i++){
+                opt[r[i]].setAttribute('disabled','disabled');
+            }
+            opt[op].setAttribute('disabled','disabled')
+            // console.log(opt)
+            // dest.options[op].setAttribute("disabled");
+            
+        }
+        function selectedDest(){
+            op = dest.selectedIndex;
+            console.log(op);
+            for(let i=1; i<source.length; i++){
+                source.options[i].removeAttribute("disabled");
+            }
+            opt = source.options;
+            
+            // let r = routes.get(op);
+            // for(let i=0; i<r.length; i++){
+            //     opt[r[i]].setAttribute('disabled','disabled');
+            // }
+            opt[op].setAttribute('disabled','disabled')
+            // console.log(opt)
+            // dest.options[op].setAttribute("disabled");
+            
+        }
+
+        function addRoute(){
+            s = source.selectedIndex;
+            d = dest.selectedIndex;
+            try{
+                if(routes.get(s).includes(d)){
+                    alert("Cannot set route again");
+                    return;
+                }
+            }catch (err){
+                console.log(err);
+            } finally{
+                clearSelected();
+            }
+            routes.get(s)[routes.get(s).length] = d;
+            // routes.get(d)[routes.get(d).length] = s;
+            console.log(routes);
+            let ch = document.createElement('p');
+            ch.innerText = "From " + source.options[s].value + " to " + dest.options[d].value;
+            para.appendChild(ch);
+            selectedSrc();
+            selectedDest();
+            clearSelected();
+            console.log(routes)
+        }
+        function clearSelected(){
+            source.selectedIndex = 0;
+            dest.selectedIndex = 0;
+            
+        }
+        
+
+    </script>
+</html>
