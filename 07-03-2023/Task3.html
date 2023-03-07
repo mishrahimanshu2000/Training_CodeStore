@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On/Off</title>
+</head>
+<body style="text-align: center; margin-top: 10%;">
+    <img src="pic_bulboff.gif" alt="Bulb off" >
+    <br>
+    <button onclick="bulb()" style="margin: 3px;" value="turnOff">Turn bulb ON</button>
+
+
+
+    <script>
+        let image = document.getElementsByTagName('img')[0];
+        let btn = document.getElementsByTagName('button')[0];
+        function bulb(){
+            if(btn.value === "turnOff"){
+                image.src = "pic_bulbon.gif";
+                btn.innerText = "Turn bulb OFF"
+                btn.value = "turnOn";
+            }
+            else{
+                image.src = "pic_bulboff.gif";
+                btn.innerText = "Turn bulb ON"
+                btn.value = "turnOff"
+            }
+        }
+    </script>
+</body>
+</html>

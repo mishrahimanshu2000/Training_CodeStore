@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <Header>
+        <h1 id="head" >This is Heading</h1>
+    </Header>
+    <main>
+        <p id="paragraph1">
+            paragraph 1
+        </p>
+        <p class="para">
+            paragraph 2
+        </p>
+        <p class="para">
+            paragraph 3
+        </p>
+        <div>
+            <button onclick="manipulateId()" style="display: block;">Click to manipulate by id</button>
+            <button onclick="manipulateEle()" style="display: block;">Click to manipulate by element</button>
+            <button onclick="manipulateClass()"  style="display: block;">Click to manipulate by class</button>
+        </div>
+    </main>
+
+
+    <script>
+
+
+        function manipulateId(){
+            let id = document.getElementById("head");
+            id.innerText = "This is now manipulated by JS";
+        }
+        function manipulateEle(){
+            let element = document.getElementsByTagName('p');
+            for (let index = 0; index < element.length; index++) {
+                element[index].innerText = "This is the paragraph manipulated " + index;
+                element[index].style.color = "green";
+            }
+        }
+        function manipulateClass() {
+            let cls = document.getElementsByClassName('para');
+            for (let index = 0; index < cls.length; index++) {
+                cls[index].innerHTML = "Manipulated by class " + index; 
+                cls[index].style.color = "blue"
+            }
+        }
+    </script>
+</body>
+</html>

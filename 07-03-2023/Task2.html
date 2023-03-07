@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+<body>
+    <h1>This is Heading inside h1 tag</h1>
+    <p>
+        This is the paragraph inside p tag <br>
+        and its going to be manipulated
+    </p>
+    <img src="image1.png" alt="JavaScript image" id="image">
+    <br>
+
+    <button onclick="manipulate()">
+        Click here for the change
+    </button>
+
+    <script>
+        let h = document.getElementsByTagName("h1")[0];
+        let p = document.getElementsByTagName("p")[0];
+        let img = document.getElementById("image");
+
+        function manipulate(){
+            h.innerText = "This is now changed to Heading";
+            h.style.color = "red"
+            p.style.fontStyle = "italic";
+            p.style.color = "green"
+            img.src = "image2.webp";
+        }
+    </script>
+</body>
+</html>
