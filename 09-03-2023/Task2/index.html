@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-size: x-large;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Prevent Default</h3>
+    <p>
+        The preventDefault() method is used to prevent the browser from executing the default action of the selected
+        element. It can prevent the user from processing the request by clicking the link.
+        <br>
+    <h4>Example:</h4>
+    <a href="https://www.google.com/" id="link"> Google </a>
+    </p>
+
+    <h3>Stop Propogation</h3>
+    <p>
+        The stopPropagation() method is used to stop propagation of event calling. That is a parent event is called we
+        can stop the propagation of calling its children by using the stopPropagation() method and vice-versa.
+
+        <h4>Example:</h4>
+        <div onclick="fun1()" style="background-color: green; color: aliceblue; font-size: larger ;" >
+        Stop Propagation
+            <div onclick="fun2(event)" style="background-color: greenyellow; font-size: x-large; color: black;">
+                This will trigger the above div as well;
+            </div>
+        </div>
+        <input type="checkbox" id="cbox"> Stop propogation
+    </p>
+</body>
+<script>
+    document.getElementById("link").addEventListener("click", function (event) {
+        alert("Action is prevented")
+        event.preventDefault();
+    });
+    function fun2(event){
+        confirm("Inner Div");
+        cBox = document.getElementById("cbox");
+        if(cBox.checked){
+            event.stopPropagation();
+        }
+    }
+    function fun1(){
+        confirm("Outer Div");
+    }
+    
+
+
+</script>
+
+
+</html>

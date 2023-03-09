@@ -22,6 +22,9 @@
             border-radius: 6px;
 
         }
+        input:focus {
+            border: 2px solid red ;
+        }
     </style>
 
 </head>
@@ -92,7 +95,7 @@
 
             if(!mob_number.value.match(/^[1-9][0-9]{9}$/)){
                 alert("Please Enter valid Mobile Number");
-                mob_number.focus();
+                mob_number.blur();
                 return false;
             }
 
