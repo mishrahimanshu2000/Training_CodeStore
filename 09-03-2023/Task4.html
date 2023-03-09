@@ -67,23 +67,48 @@
         loader.style.display = "block";
         btn.innerHTML = "Get the new one";
         para.style.display = "inline-block";
-        var response;
         var res;
-        try {
-            response = await fetch(url);
-            res = await response.json();
-        } catch (error) {
-            console.log("Opps Error occured " + error);
-        }
-
-        if(res.error == true){
-            para.innerText = "Opps there is an error please try again";
+        
+        let prms = new Promise((myResponse, reject)=>{
+            let req = new XMLHttpRequest();
+            req.open('GET', url);
+            req.onload = ()=>{
+                res =JSON.parse(req.response);
+                if(res.error==true){
+                    reject("Opps an error occured");
+                } else{
+                    myResponse(res);
+                }
+            };
+            req.send();
+        });
+        prms.then(
+        (value)=>{
+            console.log(value);
+            showData(value);
+        },
+        (error) => {
+            para.innerText = error;
             loader.style.visibility = "hidden";
             console.log(res);
-            return;
         }
-        showData(res)
-        console.log(res);
+        );
+        
+        // try {
+        //     response = await fetch(url);
+        //     res = await response.json();
+        // } catch (error) {
+        //     console.log("Opps Error occured " + error);
+        // }
+
+        // if(res.error == true){
+        //     para.innerText = "Opps there is an error please try again";
+        //     loader.style.visibility = "hidden";
+        //     console.log(res);
+        //     return;
+        // }
+        // showData(res)
+        // console.log(res);
     }
 
     function showData(res){
