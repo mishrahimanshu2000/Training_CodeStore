@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch api</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: large;
+            background-image: url(laugh.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: indigo;
+        }
+        button{
+            padding: 6px;
+            font-size: large;
+            background-color: mediumorchid;
+            color: white;
+            border-radius: 6px;
+        }
+        p button{
+            background-color: navajowhite;
+            color: black;
+        }
+        p{
+            padding: 18px;
+            opacity: 85%;
+            display: none;
+            margin: auto;
+            margin-top: 6px;
+            font-size: x-large;
+            color: black;
+        }
+        h1{
+            margin-top: 13%;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Hello There!
+    </h1>
+    <h2>
+        Want to get refreshed let me get you a joke ;)
+    </h2>
+    <button onclick="getResponse()" id="btn">
+        Get a Joke
+    </button>
+    <div id="loader" style="display: none;">
+        loading...
+    </div>
+    <div>
+        <p id="para"></p>
+    </div>
+</body>
+<script>
+    var url = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=sexist,explicit";
+    let btn = document.getElementById("btn");
+    let loader = document.getElementById("loader");
+    let para = document.getElementById('para');
+
+    async function getResponse(){
+        loader.style.display = "block";
+        btn.innerHTML = "Get the new one";
+        para.style.display = "inline-block";
+        var response;
+        var res;
+        try {
+            response = await fetch(url);
+            res = await response.json();
+        } catch (error) {
+            console.log("Opps Error occured " + error);
+        }
+
+        if(res.error == true){
+            para.innerText = "Opps there is an error please try again";
+            loader.style.visibility = "hidden";
+            console.log(res);
+            return;
+        }
+        showData(res)
+        console.log(res);
+    }
+
+    function showData(res){
+        if(res.type == 'single'){
+            document.getElementById('para').innerText = res.joke;
+        }
+        else {
+            let q = res.setup;
+            let a = res.delivery;
+            var button = document.createElement("button");
+            button.innerText = "Get The Ans";
+            button.addEventListener("click", function click(){
+                const strong = document.createElement("strong");
+                strong.innerHTML = a;
+                button.style.display = "none";
+                para.appendChild(strong);
+            });
+            para.innerHTML = "Question : " + res.setup + "<br>";
+            para.appendChild(button);  
+        }
+        loader.style.display = "none"
+    }
+    
+</script>
+</html>
