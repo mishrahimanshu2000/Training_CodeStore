@@ -6,53 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Buddies</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         select, button{
             font-size: x-large;
             padding: 2px;
-            text-align: center;
-            margin: 2px;
+            margin: 12px;
         }
         body{
             align-items: center;
             text-align: center;
+            background-image: url(airplane.jpg);
         }
         p{
             margin-bottom: 0;
+            background-color: antiquewhite;
+            opacity: 80%;
         }
-        
+        #div1{
+            display: inline-block;
+            margin: auto;
+            width: 100%;
+            background-color: blanchedalmond;
+            opacity: 95%;
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body style="font-size: xx-large;">
-    <label for="source">Source: </label>
-    <select name="Source" id="src" onchange="selectedSrc()">
-        <option value="none" selected disabled>Choose one</option>
-        <option value="Delhi" >Delhi</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Varanasi">Varanasi</option>
-        <option value="Roorkee">Roorkee</option>
-        <option value="Noida">Noida</option>
-        <option value="Lucknow">Lucknow</option>
-    </select>
-
-    <label for="Destination">Destination: </label>
-    <select name="Destination" id="des" onchange="selectedDest()">
-        <option value="none" selected disabled>Choose one</option>
-        <option value="Delhi">Delhi</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Varanasi">Varanasi</option>
-        <option value="Roorkee">Roorkee</option>
-        <option value="Noida">Noida</option>
-        <option value="Lucknow">Lucknow</option>
-        <!-- <option value=""></option> --> 
-    </select>
-    <br>
-    <Button onclick="addRoute()" >
-        Add Journey
-    </Button>
-    
-    <div id="pq"></div>
-    
+    <main>
+        <div>
+            <div id="div1">
+                <h1>Plan Your journey</h1>
+                <label for="source">Source: </label>
+                <select name="Source" id="src" onchange="selectedSrc()">
+                    <option value="none" selected disabled>Choose one</option>
+                    <option value="Delhi" >Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Roorkee">Roorkee</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Lucknow">Lucknow</option>
+                </select>
+            
+                <label for="Destination">Destination: </label>
+                <select name="Destination" id="des" onchange="selectedDest()">
+                    <option value="none" selected disabled>Choose one</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Roorkee">Roorkee</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <!-- <option value=""></option> --> 
+                </select>
+                <br>
+                <Button onclick="addRoute()" >
+                    Add Journey
+                </Button>
+            </div>
+        </div>
+        <div id="pq"></div>
+    </main>    
 </body>
+
     <script>
         let source = document.querySelector('#src');
         let dest = document.querySelector('#des');
