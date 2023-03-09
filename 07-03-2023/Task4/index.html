@@ -29,9 +29,9 @@
         <option value="Delhi" >Delhi</option>
         <option value="Mumbai">Mumbai</option>
         <option value="Varanasi">Varanasi</option>
-        <!-- <option value="Roorkee">Roorkee</option>
+        <option value="Roorkee">Roorkee</option>
         <option value="Noida">Noida</option>
-        <option value="Lucknow">Lucknow</option> -->
+        <option value="Lucknow">Lucknow</option>
     </select>
 
     <label for="Destination">Destination: </label>
@@ -40,10 +40,10 @@
         <option value="Delhi">Delhi</option>
         <option value="Mumbai">Mumbai</option>
         <option value="Varanasi">Varanasi</option>
-        <!-- <option value="Roorkee">Roorkee</option>
+        <option value="Roorkee">Roorkee</option>
         <option value="Noida">Noida</option>
-        <option value="Lucknow">Lucknow</option> -->
-        <!-- <option value=""></option> -->
+        <option value="Lucknow">Lucknow</option>
+        <!-- <option value=""></option> --> 
     </select>
     <br>
     <Button onclick="addRoute()" >
@@ -108,6 +108,10 @@
                     alert("Cannot set route again");
                     return;
                 }
+                else if(s==0 || d==0){
+                    alert("Select the correct source and destination");
+                    return;
+                }
             }catch (err){
                 console.log(err);
             } finally{
@@ -127,7 +131,7 @@
         function clearSelected(){
             source.selectedIndex = 0;
             dest.selectedIndex = 0;
-            
+
         }
         
 
