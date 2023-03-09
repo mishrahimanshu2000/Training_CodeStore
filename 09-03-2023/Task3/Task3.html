@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="mouse" style="text-align: center;">
+            Mouse events here
+        </h1>
+    </div>
+</body>
+<script>
+    //getting the element to display the use of mouse events  
+
+    let mouse = document.getElementById("mouse");
+
+    // using the onclick event
+    mouse.addEventListener("contextmenu" , (e)=>{e.preventDefault()});  
+    // context menu will not open now on right click
+    mouse.addEventListener("click" , ()=>{mouse.innerHTML="clicked"}); 
+    // text will change on the click 
+    mouse.addEventListener("dblclick" , ()=>{mouse.innerHTML="double click mouse event"}); 
+    // text wll change on double click
+    mouse.addEventListener("mousedown" , ()=>{mouse.style.color="orange"});  
+    //text color will change to red when we click the element
+    mouse.addEventListener("mouseup" , ()=>{mouse.style.color="purple"});  
+    //text color will change to red when we click the element
+    mouse.addEventListener("mouseenter" , ()=>{mouse.style.fontSize="2.5rem"});  
+    //text color will change to red when we click the element
+    mouse.addEventListener("mouseleave" , ()=>{mouse.style.fontSize="1.5rem"});  
+    //text color will change to red when we click the element
+    mouse.addEventListener("mouseover" , ()=>{mouse.innerHTML="Mouse is moving over"});  
+    //text will change whern mouse will move over the element
+    mouse.addEventListener("mouseout" , ()=>{mouse.innerHTML="Mouse is now moved out"});  
+    //text will change whern mouse will move over the element
+    mouse.addEventListener("mousemove" , ()=>{mouse.innerHTML="Mouse is moving"});  
+    //text will change whern mouse will move over the element
+
+
+//mouse over works for the element as well as its child element 
+//mouse move works for the current element when mouse by 1 pixel
+</script>
+</html>
