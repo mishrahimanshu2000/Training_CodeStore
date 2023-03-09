@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registation Form</title>
+
+    <style>
+        form {
+            text-align: center;
+            font-size: x-large;
+            border: 2px solid black;
+            border-radius: 12px;
+            margin-inline: 5%;
+        }
+
+        input {
+            margin: 3px;
+            font-size: x-large;
+            border-radius: 6px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            Student Registation Form
+        </h1>
+    </header>
+    <main>
+        <form action="#" onsubmit="return checkInput()" name="form">
+            <label for="Student Name">Student Name:</label>
+            <input type="text" name="Student Name" id="stName" placeholder="Student Name">
+            <br>
+            <label for="Email">E-Mail:</label>
+            <input type="email" name="Email" id="email" placeholder="Email">
+            <br>
+            <label for="mob_number">Mob. number:</label>
+            <input type="number" name="mob_number" id="mob_number" placeholder="Mob. number">
+            <br>
+            <label for="gender">Gender: </label>
+            Male<input type="radio" name="gender" value="male">
+            Female<input type="radio" name="gender" value="female">
+            Other<input type="radio" name="gender" value="other">
+            <br>
+            <label for="Year">Year:</label>
+            1st<input type="radio" name="Year" name="year" value="1st">
+            2nd<input type="radio" name="Year" name="year" value="2nd">
+            3rd<input type="radio" name="Year" name="year" value="3rd">
+            4th<input type="radio" name="Year" name="year" value="4th">
+
+            <br>
+            <label for="Semester">Semester:</label>
+            <input type="number" name="Semester" id="semester" placeholder="Semester">
+            <br>
+            <label for="Branch">Branch:</label>
+            <input type="text" name="Branch" id="branch" placeholder="Branch">
+            <br>
+            <input type="submit" value="Submit" style="background-color: burlywood;">
+        </form>
+
+        <div id="err"></div>
+    </main>
+
+    <script>
+        let stName = document.querySelector("#stName");
+        let year = document.querySelector("#year");
+        let semester = document.querySelector("#semester");
+        let branch = document.querySelector("#branch");
+        let email = document.querySelector("#email");
+        let mob_number = document.querySelector("#mob_number");
+        let form = document.form;
+        let branches = ["CSE","ME","CE","ECE","MCA","MBA"];
+        
+        function checkInput() {
+            if(stName.value.length<4 || stName.value.length > 20){
+                alert("Please enter valid name between length 4-20");
+                stName.focus();
+                return false;
+            }
+
+            if(!email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+                alert("Please Enter valid mail");
+                email.focus();
+                return false;
+            }
+
+            if(!mob_number.value.match(/^[1-9][0-9]{9}$/)){
+                alert("Please Enter valid Mobile Number");
+                mob_number.focus();
+                return false;
+            }
+
+            if(form.gender.value === ""){
+                alert("Select Gender");
+                return false;
+            }
+
+            if(form.year.value === ''){
+                alert("Select Year");
+                return false;
+            }
+
+            if(semester.value.match(/[1-8]/) ){
+                alert("Enter correct semester")
+                return false;
+            }
+            if(branches.indexOf(branch.value.toUpperCase()) < 0){
+                alert("Enter correct Branch");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
