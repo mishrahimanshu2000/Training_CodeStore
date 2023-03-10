@@ -66,6 +66,9 @@
                 <Button onclick="addRoute()" >
                     Add Journey
                 </Button>
+                <button onclick="window.location.reload()" style="display: none;" id="reset">
+                    Clear Routes
+                </button>
             </div>
         </div>
         <div id="pq"></div>
@@ -75,9 +78,14 @@
     <script>
         let source = document.querySelector('#src');
         let dest = document.querySelector('#des');
+        let reset = document.querySelector('#reset');
         let routes = new Map();
         for(let i=0; i<=6 ; i++){
             routes.set(i,[]);
+        }
+        let routesDes = new Map();
+        for(let i=0; i<=6 ; i++){
+            routesDes.set(i,[]);
         }
         let para = document.getElementById('pq');
         
@@ -108,14 +116,11 @@
                 source.options[i].removeAttribute("disabled");
             }
             opt = source.options;
-            
-            // let r = routes.get(op);
-            // for(let i=0; i<r.length; i++){
-            //     opt[r[i]].setAttribute('disabled','disabled');
-            // }
-            opt[op].setAttribute('disabled','disabled')
-            // console.log(opt)
-            // dest.options[op].setAttribute("disabled");
+            let bSrc = routesDes.get(op);
+            for(let i=0; i<bSrc.length; i++){
+                opt[bSrc[i]].setAttribute('disabled','disabled');
+            }
+            opt[op].setAttribute('disabled','disabled');
             
         }
 
@@ -125,10 +130,12 @@
             try{
                 if(routes.get(s).includes(d)){
                     alert("Cannot set route again");
+                    clearSelected();
                     return;
                 }
                 else if(s==0 || d==0){
                     alert("Select the correct source and destination");
+                    clearSelected();
                     return;
                 }
             }catch (err){
@@ -137,15 +144,16 @@
                 clearSelected();
             }
             routes.get(s)[routes.get(s).length] = d;
-            // routes.get(d)[routes.get(d).length] = s;
+            routesDes.get(d)[routes.get(d).length] = s;
             console.log(routes);
             let ch = document.createElement('p');
             ch.innerText = "From " + source.options[s].value + " to " + dest.options[d].value;
             para.appendChild(ch);
+            reset.style.display = "inline-block"
             selectedSrc();
             selectedDest();
             clearSelected();
-            console.log(routes)
+            console.log(routes);
         }
         function clearSelected(){
             source.selectedIndex = 0;
