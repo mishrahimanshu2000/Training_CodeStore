@@ -3,7 +3,7 @@ let ans : Array<Number | string> = [];  // New Array
 
 console.log("Given Array");
 console.log(arr);
-arr.forEach((element) => {
+arr.forEach((element : string|number) => {
     console.log(element + " -> " + typeof element)
 });
 
@@ -25,7 +25,7 @@ for(let i=0; i<arr.length; i++){
 }
 console.log("After Modification");
 console.log(arr);
-arr.forEach((element) => {
+arr.forEach((element : string|number) => {
     console.log(element + " -> " + typeof element)
 });
 
