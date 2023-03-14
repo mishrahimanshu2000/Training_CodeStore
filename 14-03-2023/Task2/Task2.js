@@ -1,6 +1,6 @@
 // --------------------- BAR CHART ---------------------------------------- 
-let xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-let yValues = [55, 49, 44, 24, 15];
+let xValues = ["Red", "Green", "Blue", "Orange", "Brown"];
+let yValues = [55, 49, 44, 24, 18];
 var barColors = ["red", "green", "blue", "orange", "brown"];
 
 new Chart("barChart", {
@@ -9,8 +9,8 @@ new Chart("barChart", {
         labels: xValues,
         datasets: [{
             labels: '',
-            backgroundColor: barColors,
-            data: yValues
+            data: yValues,
+            backgroundColor: barColors
         }]
     },
     options: {
@@ -52,7 +52,7 @@ new Chart("lineChart", {
 });
 
 
-// -------------------------------
+// ------------------------------- Functional Line Chart
 xValues = [];
 yValues = [];
 generateData("Math.sin(x)", 0, 10, 0.5);
@@ -83,3 +83,76 @@ function generateData(value, i1, i2, step = 1) {
         xValues.push(x);
     }
 }
+// ---------------------------------------- Scattered Plot
+const scData = {
+    datasets: [{
+        pointRadius: 4,
+        pointBackgroundColor: "rgb(0,0,255)",
+        data: [
+            { x: 50, y: 7 },
+            { x: 60, y: 8 },
+            { x: 70, y: 8 },
+            { x: 80, y: 9 },
+            { x: 90, y: 9 },
+            { x: 100, y: 9 },
+            { x: 110, y: 10 },
+            { x: 120, y: 11 },
+            { x: 130, y: 14 },
+            { x: 140, y: 14 },
+            { x: 150, y: 15 }
+        ]
+    }]
+}
+
+const scOption = {
+    legend: { display: false },
+    scales: {
+        xAxes: [{ ticks: { min: 40, max: 160 } }],
+        yAxes: [{ ticks: { min: 6, max: 16 } }],
+    },
+    title: {
+        display: true,
+        text: "Scattered Plot"
+    }
+}
+
+new Chart("scatteredPlot", {
+    type: "scatter",
+    data: scData,
+    options: scOption
+});
+
+// -----------------------------------
+
+const data = {
+    labels: [
+        'Red',
+        'Green',
+        'Yellow',
+        'Grey',
+        'Blue'
+    ],
+    datasets: [{
+        label: 'My First Dataset',
+        data: [11, 16, 7, 3, 14],
+        backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(75, 192, 192)',
+            'rgb(255, 205, 86)',
+            'rgb(201, 203, 207)',
+            'rgb(54, 162, 235)'
+        ]
+    }]
+};
+
+const config = {
+    type: 'pie',
+    data: data,
+    options: {
+        title: {
+            display: true,
+            text: "Pie Chart"
+        }
+    }
+};
+new Chart('piChart', config)
