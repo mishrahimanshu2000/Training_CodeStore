@@ -34,7 +34,7 @@ new Chart("lineChart", {
         datasets: [{
             fill: false,
             lineTension: 0,
-            backgroundColor: "rgba(0,0,255,1.0)",
+            backgroundColor: "aliceblue",
             borderColor: "rgba(0,0,255,0.1)",
             data: yValues
         }]
