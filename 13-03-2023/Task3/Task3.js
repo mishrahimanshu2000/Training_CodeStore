@@ -21,7 +21,7 @@ for (var i = 0; i < arr.length; i++) {
     }
 }
 console.log("After Modification");
-console.log(arr);
+console.log(arr); 
 arr.forEach(function (element) {
     console.log(element + " -> " + typeof element);
 });
