@@ -1,7 +1,7 @@
 // --------------------- BAR CHART ---------------------------------------- 
-let xValues = ["Red", "Green", "Blue", "Orange", "Brown"];
-let yValues = [55, 49, 44, 24, 18];
-var barColors = ["red", "green", "blue", "orange", "brown"];
+let xValues = ["Red", "Green", "Blue", "Orange", "Brown", "Pink"];
+let yValues = [28, 57, 21, 44, 28, 32];
+var barColors = ["red", "green", "blue", "orange", "brown", "pink"];
 
 new Chart("barChart", {
     type: "bar",
@@ -10,7 +10,7 @@ new Chart("barChart", {
         datasets: [{
             labels: '',
             data: yValues,
-            backgroundColor: barColors
+            backgroundColor: barColors,
         }]
     },
     options: {
@@ -18,6 +18,9 @@ new Chart("barChart", {
         title: {
             display: true,
             text: "Bar Chart",
+        },
+        scales :{
+            yAxes : [{ticks:{min:10, max : 60}}]
         }
     }
 });
@@ -34,8 +37,8 @@ new Chart("lineChart", {
         datasets: [{
             fill: false,
             lineTension: 0,
-            backgroundColor: "aliceblue",
-            borderColor: "rgba(0,0,255,0.1)",
+            backgroundColor: "red",
+            borderColor: "lightblue",
             data: yValues
         }]
     },
@@ -63,8 +66,9 @@ new Chart("functionalChart", {
         labels: xValues,
         datasets: [{
             fill: false,
-            pointRadius: 2,
-            borderColor: "rgba(0,0,255,0.5)",
+            pointRadius: 4,
+            pointBackgroundColor:'black',
+            borderColor: "darkgray",
             data: yValues
         }]
     },
@@ -87,7 +91,7 @@ function generateData(value, i1, i2, step = 1) {
 const scData = {
     datasets: [{
         pointRadius: 4,
-        pointBackgroundColor: "rgb(0,0,255)",
+        pointBackgroundColor: "brown",
         data: [
             { x: 50, y: 7 },
             { x: 60, y: 8 },
@@ -136,7 +140,7 @@ const data = {
         label: 'My First Dataset',
         data: [11, 16, 7, 3, 14],
         backgroundColor: [
-            'rgb(255, 99, 132)',
+            'rgb(255, 62, 92)',
             'rgb(75, 192, 192)',
             'rgb(255, 205, 86)',
             'rgb(201, 203, 207)',

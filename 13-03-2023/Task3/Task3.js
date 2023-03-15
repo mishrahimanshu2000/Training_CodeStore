@@ -5,12 +5,12 @@ console.log(arr);
 arr.forEach(function (element) {
     console.log(element + " -> " + typeof element);
 });
-// arr.forEach(element => {
-//     if(isNaN(parseInt(element)))
-//         ans.push(element.toUpperCase());
-//     else
-//         ans.push(parseInt(element));
-// });
+arr.forEach(function (element) {
+    if (isNaN(parseInt(element)))
+        ans.push(element.toUpperCase());
+    else
+        ans.push(parseInt(element));
+});
 console.log("Modifying\n");
 for (var i = 0; i < arr.length; i++) {
     if (isNaN(parseInt(arr[i]))) {
@@ -25,8 +25,8 @@ console.log(arr);
 arr.forEach(function (element) {
     console.log(element + " -> " + typeof element);
 });
-// console.log("New Array");
-// console.log(ans);
-// ans.forEach(element => {
-//     console.log(element + " -> " + typeof element)
-// });
+console.log("New Array");
+console.log(ans);
+ans.forEach(function (element) {
+    console.log(element + " -> " + typeof element);
+});
