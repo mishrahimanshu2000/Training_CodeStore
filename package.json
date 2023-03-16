@@ -1,0 +1,30 @@
+{
+  "name": "training_codestore",
+  "version": "1.0.0",
+  "description": "This is the repository of training @ codestore ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mishrahimanshu2000/Training_CodeStore.git"
+  },
+  "keywords": [
+    "training"
+  ],
+  "author": "Himanshu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mishrahimanshu2000/Training_CodeStore/issues"
+  },
+  "homepage": "https://github.com/mishrahimanshu2000/Training_CodeStore#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "colorify": "^0.2.0",
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  }
+}
