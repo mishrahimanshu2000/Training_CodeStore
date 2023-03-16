@@ -87,7 +87,7 @@ const changeTime = () => {
     tableSelector.removeAttribute('disabled')
     x = date.value.slice(0, 10);
     let t = x.concat(timeSelector.options.selectedIndex);
-    // console.log(t);
+    console.log(t);
     enable();
     let a = localStorage.getItem(t);
     if (!(a == null)) {
