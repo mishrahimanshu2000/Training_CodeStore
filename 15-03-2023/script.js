@@ -135,7 +135,7 @@ const book = () => {
 
 function validate() {
     console.log(personCount.value)
-    if (!date.value || tableSelector.options.selectedIndex == 0 || timeSelector.options.selectedIndex == 0 || personCount > 8 || personCount < 1 || !personCount.value ) {
+    if (!date.value || tableSelector.options.selectedIndex == 0 || timeSelector.options.selectedIndex == 0 || personCount.value > 8 || personCount.value < 1 || !personCount.value ) {
         alert("please fill the details correctly");
         return false;
     }
