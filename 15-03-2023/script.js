@@ -98,7 +98,7 @@ const changeTime = () => {
     }
 }
 
-// ----------------------------------------------- Onchange of date and time
+// ----------------------------------------------- Onchange of date
 
 const change = () => {
     timeSelector.removeAttribute('disabled')
