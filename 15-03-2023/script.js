@@ -87,7 +87,7 @@ const changeTime = () => {
     tableSelector.removeAttribute('disabled')
     x = date.value.slice(0, 10);
     let t = x.concat(timeSelector.options.selectedIndex);
-    console.log(t);
+    // console.log(t);
     enable();
     let a = localStorage.getItem(t);
     if (!(a == null)) {
@@ -134,7 +134,7 @@ const book = () => {
 // - ------------------------------------------------ Validation
 
 function validate() {
-    console.log(personCount.value)
+    // console.log(personCount.value)
     if (!date.value || tableSelector.options.selectedIndex == 0 || timeSelector.options.selectedIndex == 0 || personCount.value > 8 || personCount.value < 1 || !personCount.value ) {
         alert("please fill the details correctly");
         return false;
@@ -155,11 +155,15 @@ const showBookings = () => {
     let d = localStorage.getItem(name);
     if (!d) {
         alert(`Opps ${name + " "}you don't have any bookings`);
+        bookATable.style.display = 'block'
+        bookingDiv.style.display = 'none'
         return;
     }
     let q = JSON.parse(d);
     if (q.length === 0) {
         alert(`Opps ${name} you don't have any bookings`);
+        bookATable.style.display = 'block'
+        bookingDiv.style.display = 'none'
         return;
     }
     details += "Your Bookings are : ";
@@ -181,11 +185,12 @@ const showBookings = () => {
 console
 
 const deleteBooking = (name, i) => {
+    if(!confirm("Are You Sure you want to delete this?")){return;}
     // let name = button.value;
     // console.log(button.value);
-    console.log(name)
-    console.log(name.id.toString())
-    console.log(localStorage.getItem(name.id.toString()))
+    // console.log(name)
+    // console.log(name.id.toString())
+    // console.log(localStorage.getItem(name.id.toString()))
     let z = JSON.parse(localStorage.getItem(name.id.toString()));
     // console.log(z);
     let selInd = z[i].table;
