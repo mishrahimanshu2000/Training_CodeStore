@@ -13,9 +13,8 @@ let bookings = document.querySelector("#bookings");
 let bookATable = document.querySelector("#bookATable");
 let timeSelector = document.querySelector("#timeSlot");
 
-
-
 date.min = today;
+date.max = today.slice(0,8)+"31";
 // console.log(today)
 
 tableSlots.forEach(element => {
@@ -83,7 +82,7 @@ const check = () => {
     change();
 }
 
-// -----------------------------------
+// ----------------------------------- changeTime
 const changeTime = () => {
     tableSelector.removeAttribute('disabled')
     x = date.value.slice(0, 10);
@@ -135,7 +134,8 @@ const book = () => {
 // - ------------------------------------------------ Validation
 
 function validate() {
-    if (!date.value || tableSelector.options.selectedIndex === 0 || personCount > 8 || personCount < 1) {
+    console.log(personCount.value)
+    if (!date.value || tableSelector.options.selectedIndex == 0 || timeSelector.options.selectedIndex == 0 || personCount > 8 || personCount < 1 || !personCount.value ) {
         alert("please fill the details correctly");
         return false;
     }

@@ -9,7 +9,7 @@
     <style>
         *{
             margin: 3px;
-            background: #e3f1c1;
+            background: #95a177;
             padding: 3px;
         }
         body{
@@ -28,6 +28,8 @@
         }
         input{
             background-color: antiquewhite;
+            padding: 2px;
+
         }
         select{
             background:antiquewhite;
@@ -61,7 +63,7 @@
     <div id="selection" style="display: none;">
         <input type="date" name="date" id="date" onchange="change()" required>
         <br>
-        <select name="timeSlot" id="timeSlot" onchange="changeTime()" required>
+        <select name="timeSlot" id="timeSlot" disabled onchange="changeTime()" required>
             <option value="" selected disabled>Choose Time Slot</option>
         </select>
         <select name="table" id="tables" disabled>
