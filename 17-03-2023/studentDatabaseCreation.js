@@ -27,21 +27,6 @@ async function run() {
         await client.close();
     }
 }
-// run().catch(console.dir);
-
-// Mongo.connect(url, (err, db) => {
-//     console.log('inconnect');
-//     if (err) throw err;
-//     console.log("Created");
-//     var dbo = db.db("student");
-//     dbo.createCollection("customers", function (err, res) {
-//         if (err) throw err;
-//         console.log("Collection created!");
-//         db.close();
-//     });
-// });
-// mongodb://localhost:27017/
-
 module.exports = {
     'client' : client
 }
