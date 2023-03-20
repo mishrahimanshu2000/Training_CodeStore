@@ -35,7 +35,15 @@ app.get("/showDetails/:userName?", async (req, res) => {
 });
 
 app.get('/book/:date?/:time?', async (req, res) => {
+    console.log(req.params.date);
+    console.log(req.params.time);
     const data = await client.db('Restaurant').collection('bookedTable').find({date : req.params.date, time : req.params.time}).toArray();
+    let retData = [];
+    await data.forEach(element => {
+        console.log(element);
+        retData.push(element)
+    });
+    return res.send(retData)
 })
 
 app.post("/deleteBooking/:booking?", async (req, res) => {

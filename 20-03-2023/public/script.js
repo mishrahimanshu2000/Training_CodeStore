@@ -81,17 +81,18 @@ const check = async() => {
 const changeTime = async() => {
     tableSelector.removeAttribute('disabled')
     x = date.value.slice(0, 10);
-    let t = (timeSelector.options.selectedIndex);
+    let t = (timeSelector.options[timeSelector.options.selectedIndex].value );
     // console.log(t);
     const url = `http://localhost:3000/book/${x}/${t}`;
     enable();
     const a = await (await fetch(url)).json();
-    if (!a || a.length == 0) {
+    console.log(a);
         a.forEach(element => {
+            console.log(element);
             let dInd = element.table;
             tableSelector.options[dInd].setAttribute('disabled', 'disabled');
         });
-    }
+    
 }
 
 // ----------------------------------------------- Onchange of date
@@ -99,16 +100,15 @@ const changeTime = async() => {
 const change = async() => {
     timeSelector.removeAttribute('disabled')
     x = date.value.slice(0, 10);
-    let t = (timeSelector.options.selectedIndex);
+    let t = (timeSelector.options[timeSelector.options.selectedIndex].value);
     const url = `http://localhost:3000/book/${x}/${t}`;
     enable();
     const a = await (await fetch(url)).json();
-    if (!a || a.length == 0) {
         a.forEach(element => {
             let dInd = element.table;
             tableSelector.options[dInd].setAttribute('disabled', 'disabled');
         });
-    }
+    
 }
 
 // -----------------------------------------------------------Booking
@@ -193,5 +193,5 @@ const deleteBooking = async(delId) => {
     });
     console.log(res);
     bookings.innerHTML = '';
-    showBookings();
+    await showBookings();
 }
