@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant Booking</title>
+    <style>
+        *{
+            margin: 3px;
+            background: #95a177;
+            padding: 3px;
+        }
+        body{
+            margin-top: 10%;
+        }
+        div {
+            margin: 5%;
+            /* display: inline-block; */
+            margin: auto;
+            width: 30%;
+        }
+        button{
+            background-color: darkcyan;
+            font-size: medium;
+            color: azure;
+        }
+        input{
+            background-color: antiquewhite;
+            padding: 2px;
+
+        }
+        select{
+            background:antiquewhite;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1 style="text-align: center; color: rgb(66, 52, 32);">
+        Welcome Dine with us, We are glad to serve you
+    </h1>
+    <br>
+    <div>
+        Enter Your Name:
+        <input type="text" name="name" id="personName" required>
+        <br>
+
+        <button onclick="book()" id="bookATable">Book a Table</button>
+        <button onclick="showBookings()">Show Bookings</button>
+    </div>
+<br>
+<br>
+<br>
+
+
+
+
+    <div id="selection" style="display: none;">
+        <input type="date" name="date" id="date" onchange="change()" required>
+        <br>
+        <select name="timeSlot" id="timeSlot" disabled onchange="changeTime()" required>
+            <option value="" selected disabled>Choose Time Slot</option>
+        </select>
+        <select name="table" id="tables" disabled>
+            <option value="" selected disabled>Choose your table</option>
+        </select>
+        <br>
+
+        Number of person: <br>
+        <input type="number" name="personNumber" id="personCount" min="1" max="8" required>
+        <br>
+        <button type="submit" value="Confirm Booking" onclick="check()">Confirm Booking</button>
+        <!-- <input type="reset"> -->
+        <br>
+    </div>
+
+    <div id="bookings">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
