@@ -19,10 +19,10 @@ class Employee {
         console.log(`Good Morning ${this.employeeName}`)
     }
     
-    public get salary() : number {
+    public getSalary() : number {
         return this._salary;
     }
-    public set salary(s : number){
+    public  setSalary(s : number){
         this._salary = s;
     }
     // private function
@@ -42,8 +42,8 @@ class CodeStore_Employee extends Employee{
 let prateek = new Employee("Prateek");
 
 prateek.greet();
-prateek.salary = 12000;
-console.log(prateek.salary)
+prateek.setSalary(12000);
+console.log(prateek.getSalary())
 // prateek.isManager();
     // this will throw an error : Property 'isManager' is private and only accessible within class 'Employee'.
 console.log(prateek.employeeName);
@@ -60,4 +60,6 @@ himanshu.greet();
     // this will also throw an errior: Property '_salary' is protected and only accessible within class 'Employee' and its subclasses.
 
 himanshu.setSalary(15000);
-console.log(himanshu.salary);
+console.log(himanshu.getSalary());
+
+export{}

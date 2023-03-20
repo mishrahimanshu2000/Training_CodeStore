@@ -10,6 +10,9 @@ const client = new MongoClient(url, {
         deprecationErrors: true,
     },
 });
+
+run().catch(console.dir)
+
 async function run() {
     try {
         // Connect the client to the server (optional starting in v4.7)
@@ -17,10 +20,10 @@ async function run() {
         //
         await client.db("student").createCollection("check");
         
-        const data = await myCol.find({})
-        await data.forEach(element => {
-            console.log(element)
-        });
+        // const data = await myCol.find({})
+        // await data.forEach(element => {
+        //     console.log(element)
+        // });
         // console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
         // Ensures that the client will close when you finish/error

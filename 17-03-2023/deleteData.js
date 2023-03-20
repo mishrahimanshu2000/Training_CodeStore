@@ -15,7 +15,7 @@ async function run(){
 
     try{
         const myCol = client.db('student').collection('check');
-        const res = await myCol.deleteOne({name : 'Golu'});
+        const res = await myCol.deleteOne({name : 'abhishek'});
         console.log(res.deletedCount);
     }
     finally{
