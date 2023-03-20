@@ -15,9 +15,9 @@ async function run() {
         await client.connect();
         const myCol = await client.db('student').collection('check');
         const data = await myCol.find({});
-    
+        // await console.log(data +"\n" + typeof data)
         await data.forEach(element => {
-            console.log(element)
+            console.log(element);
         });
     }
     finally{
