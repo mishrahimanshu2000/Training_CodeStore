@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+            margin-left: 12px;
+            margin-bottom: 6px;
+            font-size: large;
+            padding: 6px;
+        }
+        #addResultDiv{
+            /* display: none; */
+            margin: auto;
+            margin-left: 12%;
+            margin-top: 8%;
+            font-size: large;
+
+        }
+        #submitResult{
+            border: 2px solid blue;
+            border-radius: 8px;
+            background-color: sandybrown;
+            padding: 4px;
+            margin: 12px;
+            margin-left: 32px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="showResults()">Show Result</button>
+    <button>Add Result</button>
+
+    <div id="addResultDiv" >
+        <form action="/postresult" method="post">
+            <label for="fullName">Name:</label>
+            <input type="text" name="fullName" id="fullName" placeholder="Full Name of Student">
+            <label for="fatherName">Father Name</label>
+            <input type="text" name="fatherName" id="fatherName" placeholder="Father's Name">
+            <label for="standard">Standard</label>
+            <input type="text" name="standard" id="standard" placeholder="Standard">
+            <label for="marks">Marks Obtained</label>
+            <input type="number" name="marks" id="marks" placeholder="Marks Obtained">
+            <label for="marks">Student Photo</label>
+            <input type="file" name="photo" accept="image/*" required>
+            
+            <input type="submit" id="submitResult" value="Submit Result">
+        </form>
+    </div>
+
+    <div id="showResultDiv">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
