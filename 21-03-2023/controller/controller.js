@@ -1,9 +1,8 @@
 const mysql = require('mysql');
 const dbconfig = require('../config/dbconfig')
 
-
-
 const mysqlConnection = mysql.createConnection(dbconfig);
+
 
 mysqlConnection.connect((err) => {
     if (!err)
@@ -41,7 +40,12 @@ async function deleteBooking(req, res){
 }
 
 async function bookTable(req, res){
-    
+    mysqlConnection.query(`SELECT tableNumber FROM bookings WHERE bookingDate = "${req.params.date}" AND bookingTime = "${req.params.time}"`, (err, rows, fields) => {
+        if (!err)
+            res.send(rows);
+        else
+            console.log(err);
+    })
 }
 
 async function showDetails(req, res){

@@ -1,8 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const mysqlConnection = require('../app')
-
-console.log(mysqlConnection);
 
 const { showDetails, bookTable, confirmBooking, deleteBooking } = require("../controller/controller");
 

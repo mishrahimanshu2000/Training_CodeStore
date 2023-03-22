@@ -1,5 +1,3 @@
-// const { MongoClient } = require('mongodb');
-
 let tableSlots = ["Table-1", "Table-2", "Table-3", "Table-4", "Table-5", 'Table-6', 'Table-7', "Table-8"];
 let timeSlots = ["11AM-12AM", "12AM-1PM", "1PM-2PM", "2PM-3PM", "3PM-4PM", '4PM-5PM', '5PM-6PM', "6PM-7PM"];
 
@@ -13,13 +11,6 @@ let bookingDiv = document.querySelector('#selection');
 let bookings = document.querySelector("#bookings");
 let bookATable = document.querySelector("#bookATable");
 let timeSelector = document.querySelector("#timeSlot");
-
-// const uri = "mongodb://127.0.0.1:27017/Restaurant";
-// const client = new MongoClient(uri);
-
-
-
-
 
 date.min = today;
 date.max = today.slice(0,8)+"31";
@@ -67,7 +58,7 @@ const check = async() => {
     
     await fetch(url, {
         method : "POST"
-    }).then( (res) => console.log("posted" + res));
+    }).then( (res) => console.log(res.json()));
 
 
 
@@ -75,41 +66,44 @@ const check = async() => {
     tableSelector.options.selectedIndex = 0;
     timeSelector.options.selectedIndex = 0;
     change();
+    showBookings()
 }
 
-// ----------------------------------- changeTime
-const changeTime = async() => {
+// ----------------------------------- change in date and
+const change = async() => {
+    timeSelector.removeAttribute('disabled')
     tableSelector.removeAttribute('disabled')
     x = date.value.slice(0, 10);
     let t = (timeSelector.options[timeSelector.options.selectedIndex].value );
-    // console.log(t);
+    console.log(t);
+    // if(!t) return;
     const url = `http://localhost:3000/book/${x}/${t}`;
     enable();
     const a = await (await fetch(url)).json();
     console.log(a);
-        a.forEach(element => {
-            console.log(element);
-            let dInd = element.table;
-            tableSelector.options[dInd].setAttribute('disabled', 'disabled');
-        });
+    a.forEach(element => {
+        console.log(element);
+        let dInd = parseInt(element.tableNumber.charAt(6));
+        console.log(dInd);
+        tableSelector.options[dInd].setAttribute('disabled', 'disabled');
+    });
     
 }
 
 // ----------------------------------------------- Onchange of date
 
-const change = async() => {
-    timeSelector.removeAttribute('disabled')
-    x = date.value.slice(0, 10);
-    let t = (timeSelector.options[timeSelector.options.selectedIndex].value);
-    const url = `http://localhost:3000/book/${x}/${t}`;
-    enable();
-    const a = await (await fetch(url)).json();
-        a.forEach(element => {
-            let dInd = element.table;
-            tableSelector.options[dInd].setAttribute('disabled', 'disabled');
-        });
+// const change = async() => {
+//     x = date.value.slice(0, 10);
+//     let t = (timeSelector.options[timeSelector.options.selectedIndex].value);
+//     const url = `http://localhost:3000/book/${x}/${t}`;
+//     enable();
+//     const a = await (await fetch(url)).json();
+//         a.forEach(element => {
+//             let dInd = element.table;
+//             tableSelector.options[dInd].setAttribute('disabled', 'disabled');
+//         });
     
-}
+// }
 
 // -----------------------------------------------------------Booking
 
@@ -121,17 +115,11 @@ const book = () => {
     }
     bookingDiv.style.display = 'block';
     bookATable.style.display = 'none';
-    let a = localStorage.getItem(name);
-    if (!a) {
-        localStorage.setItem(name, '[]')
-    }
-    console.log(localStorage.getItem(name));
 }
 
 // - ------------------------------------------------ Validation
 
 function validate() {
-    // console.log(personCount.value)
     if (!date.value || tableSelector.options.selectedIndex == 0 || timeSelector.options.selectedIndex == 0 || personCount.value > 8 || personCount.value < 1 || !personCount.value ) {
         alert("please fill the details correctly");
         return false;
@@ -151,32 +139,23 @@ const showBookings = async() => {
     }
     const url = `http://localhost:3000/showDetails/${name}`;
     const res = await (await fetch(url)).json();
-    console.log(res)
+    // console.log(res)
     // const jRes = await res.json();
     // console.log(jRes);
-    if (!res) {
+    if (!res || res.length==0) {
         alert(`Opps ${name + " "}you don't have any bookings`);
         bookATable.style.display = 'block'
         bookingDiv.style.display = 'none'
         return;
     }
-    if (res.length === 0) {
-        alert(`Opps ${name} you don't have any bookings`);
-        bookATable.style.display = 'block'
-        bookingDiv.style.display = 'none'
-        return;
-    }
-    details += "Your Bookings are : ";
+    details += "Your Bookings are : <br>";
     for (let i = 0; i < res.length; i++) {
         let p = document.createElement('p');
         let btn = document.createElement('button');
         btn.id = res[i].booking_id;
         btn.setAttribute('onclick', `deleteBooking(this)`);
-        // btn.onclick = deleteBooking(name, i);
         btn.innerText = 'Delete this Booking';
-        details += `<br>Date: ${res[i].bookingDate.slice(0,10)} <br>Time: ${res[i].bookingTime} Table: ${res[i].tableNumber} <br>Number of Person: ${res[i].personCount} <br>`;
-        // console.log(details);
-        // console.log(btn);
+        details += `<br>Booking ID: ${res[i].booking_id} <br>Date: ${res[i].bookingDate.slice(0,10)} <br>Time: ${res[i].bookingTime} <br> ${res[i].tableNumber} <br>Number of Person: ${res[i].personCount} <br>`;
         p.innerHTML = details;
         p.appendChild(btn);
         bookings.append(p);
@@ -185,13 +164,13 @@ const showBookings = async() => {
 }
 
 const deleteBooking = async(delId) => {
-    // console.log(delId);
     if(!confirm("Are You Sure you want to delete this?")){return;}
     const url = `http://localhost:3000/deleteBooking/${delId.id}`
     const res = await fetch(url, {
         method : 'DELETE',
-    });
+    }).catch( (err) => console.error(err));
     console.log(res);
     bookings.innerHTML = '';
+    await change()
     await showBookings();
 }

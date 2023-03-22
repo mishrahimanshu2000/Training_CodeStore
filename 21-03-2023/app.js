@@ -3,21 +3,13 @@ const path = require('path')
 const bodyparser = require('body-parser');
 const routes = require('./routes/routes')
 var app = express();
+
+
 //Configuring express server
 
 app.use(bodyparser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-
-// mysqlConnection = mysql.createConnection(dbconfig);
-
-// mysqlConnection.connect((err) => {
-//     if (!err)
-//         console.log('Connection Established Successfully');
-//     else
-//         console.log('Connection Failed!' + JSON.stringify(err, undefined, 2));
-// });
 
 
 app.use('/', routes)
