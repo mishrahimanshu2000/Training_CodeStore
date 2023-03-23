@@ -16,7 +16,6 @@ app.use(fileUpload());
 
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'uploads')));
 
 // app.post('/postresult', (req, res) => {
 //     if(req.files){
