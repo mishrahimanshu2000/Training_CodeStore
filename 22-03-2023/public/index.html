@@ -6,20 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            text-align: center;
+            align-items: center ;
+        }
         input{
-            display: block;
+            display: inline-block;
             margin-left: 12px;
             margin-bottom: 6px;
             font-size: large;
             padding: 6px;
         }
         #addResultDiv{
-            /* display: none; */
+            display: none; 
             margin: auto;
-            margin-left: 12%;
             margin-top: 8%;
             font-size: large;
+            align-items:center;
+            justify-self: start;
 
+        }
+        button{
+            border: 2px solid black;
+            border-radius: 8px;
+            background-color: darkseagreen;
+            padding: 4px;
+            margin: 12px;
+            margin-left: 32px;
         }
         #submitResult{
             border: 2px solid blue;
@@ -29,26 +42,30 @@
             margin: 12px;
             margin-left: 32px;
         }
+        form{
+            display: inline-block;
+            text-align:start;
+        }
         
     </style>
 </head>
 <body>
     <button onclick="showResults()">Show Result</button>
-    <button>Add Result</button>
+    <button onclick="addResult()">Add Result</button>
 
     <div id="addResultDiv" >
         <form action="/postresult" method="post">
             <label for="fullName">Name:</label>
-            <input type="text" name="fullName" id="fullName" placeholder="Full Name of Student">
-            <label for="fatherName">Father Name</label>
-            <input type="text" name="fatherName" id="fatherName" placeholder="Father's Name">
-            <label for="standard">Standard</label>
-            <input type="text" name="standard" id="standard" placeholder="Standard">
-            <label for="marks">Marks Obtained</label>
-            <input type="number" name="marks" id="marks" placeholder="Marks Obtained">
-            <label for="marks">Student Photo</label>
+            <input type="text" name="fullName" id="fullName" placeholder="Full Name of Student"> <br>
+            <label for="fatherName">Father Name:</label>
+            <input type="text" name="fatherName" id="fatherName" placeholder="Father's Name"> <br>
+            <label for="standard">Standard:</label>
+            <input type="text" name="standard" id="standard" placeholder="Standard">   <br>
+            <label for="marks">Marks Obtained:</label>
+            <input type="number" name="marks" id="marks" placeholder="Marks Obtained">  <br>
+            <label for="photo">Student Photo:</label>
 
-            <input type="file" name="photo" accept="image/*" required>
+            <input type="file" name="photo" accept="image/*" required> <br>
             
             <input type="submit" id="submitResult" value="Submit Result">
         </form>

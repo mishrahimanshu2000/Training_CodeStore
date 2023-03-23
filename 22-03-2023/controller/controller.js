@@ -35,8 +35,17 @@ async function postResult(req, res) {
     });
 }
 
+async function deleteResult(req, res) {
+    let query = `DELETE from result where ID = ${req.params.id}`;
+    mysqlConnection.query(query, (err, result) => {
+        if(err) console.log((err));
+    })
+
+}
+
 
 
 
 exports.showResults = showResults;
 exports.postResult = postResult;
+exports.deleteResult = deleteResult;
