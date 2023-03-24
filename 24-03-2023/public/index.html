@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination API</title>
+    <style>
+        *{
+            text-align: center;
+            padding: 12px;
+            font-size: large;
+        }
+        #response{
+            border:1px solid black;
+            text-shadow: 1px;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <label for="page">Page:</label>
+    <input type="text" name="page" id="pageno"> -->
+
+    <div id="first">
+        <label for="limit">Number of response per page</label>
+        <input type="text" id="limit">
+        <button id="clickbtn" onclick="call(1,0)" value="Click">clickbtn</button>
+    </div>
+
+
+    <div id="response">
+    </div>
+
+    <script>
+        const limit = document.querySelector('#limit');
+        const button = document.getElementById("clickbtn")
+        const response = document.querySelector('#response');
+        const first = document.querySelector('#first');
+        // button.addEventListener('click', click())
+        let page = 1;
+        
+        async function call(page,lmt){
+            first.style.display = 'none';
+            response.innerHTML = "";
+            // console.log('click');
+            let result;
+            if(lmt==0){
+                result = await(await fetch(`/user?pageno=${page}&limit=${limit.value}`)).json()
+            }
+            else {
+                result = await(await fetch(`/user?pageno=${page}&limit=${lmt}`)).json()
+            }
+            // console.log(result);
+            response.innerText  += JSON.stringify(result);
+
+            if(result.previous){
+                response.innerHTML += `<br><br><button onclick='call(${result.previous.page}, ${result.previous.limit})'>previous</button>`
+            }
+
+            if(result.next){
+                response.innerHTML += `<br><br><button onclick='call(${result.next.page}, ${result.next.limit})'>next</button>`
+            }
+        }
+    </script>
+</body>
+</html>
